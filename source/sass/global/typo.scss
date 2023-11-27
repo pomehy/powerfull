@@ -1,0 +1,37 @@
+.title-h1 {
+  font-weight: 900;
+  font-size: size(110px);
+  line-height: 90%;
+}
+
+.title-h2 {
+  font-weight: 900;
+  font-size: size(52px);
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.title-h3 {
+  font-size: size(36px);
+  text-transform: uppercase;
+}
+
+.text-md {
+  font-size: size(20px);
+}
+
+.text-big {
+  font-size: size(24px);
+}
+
+.text-large {
+  font-size: size(32px);
+}
+
+.text-accent {
+  color: $color-vermilion;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}

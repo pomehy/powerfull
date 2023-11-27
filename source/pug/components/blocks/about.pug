@@ -1,0 +1,64 @@
+-
+  const aboutGallery = [
+    {
+      name: "a-gallery-1",
+      format: "jpg",
+      width: 350,
+      height: 410,
+      altText: 'powerfull img',
+    },
+    {
+      name: "a-gallery-2",
+      format: "jpg",
+      width: 350,
+      height: 451,
+      altText: 'powerfull img',
+    },
+    {
+      name: "a-gallery-3",
+      format: "jpg",
+      width: 350,
+      height: 376,
+      altText: 'powerfull img',
+    },
+    {
+      name: "a-gallery-4",
+      format: "jpg",
+      width: 350,
+      height: 410,
+      altText: 'powerfull img',
+    },
+    {
+      name: "a-gallery-5",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull img',
+    },
+  ]
+
+mixin about()
+  section.about.page-section
+    .container
+      .page-section__header
+        .page-section__title-wrapper
+          .page-section__title-bg.title-h1 About us
+          h2.page-section__title.title-h2 About us
+      .page-section__body
+        .page-section__grid
+          .about__image-wrapper
+            +picture('content', 'ivan-powerfull', 'jpg', 580, 540, 'Ivan Powerfull')
+          .about__content
+            h3.about__title.title-h2 Greetings
+            .about__text-wrapper
+              p.text-big #[span.text-accent Welcome to Powerful Team], your premier online fitness family. We’re not just coaches; we’re your relentless allies on a shared journey towards excellence. With us, you gain more than fitness plans—you join a movement that nurtures your strength, passion, and persistence.
+              p.text-big Our team embodies expertise and enthusiasm, offering personalized online coaching powered by the latest in fitness science.
+              p.text-big We celebrate every victory together and tackle each challenge with the collective might of our community.
+              p.text-big Here, every workout is a step toward shared triumph. Join us and unlock your potential. Together, we don’t just aim for goals—we conquer them.
+        .about__gallery
+          .about__gallery-title.title-h2 Welcome to #[span.text-accent Powerful Team.] #[br] Welcome to stronger, together.
+          .gallery-slider.swiper(data-slider="gallery")
+            .gallery-slider.swiper-wrapper
+              each slide in aboutGallery
+                .gallery-slider__item.swiper-slide
+                  +picture('content', slide.name, slide.format, slide.width, slide.height, slide.altText).gallery-slider__img

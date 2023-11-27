@@ -1,0 +1,11 @@
+.gallery-slider {
+  &__item {
+    width: auto;
+    padding-right: size(20px);
+  }
+  &__img {
+    img {
+      border-radius: size(10px);
+    }
+  }
+}

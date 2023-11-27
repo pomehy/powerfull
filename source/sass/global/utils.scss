@@ -6,7 +6,11 @@
   min-height: 100vh;
   /* stylelint-disable-next-line */
   min-height: calc(100 * var(--vh, 1vh));
-
+  color: $color-default-white;
+  background-color: $color-main-black;
+  font-size: size(16px);
+  line-height: 1;
+  letter-spacing: 0.01em;
   .header,
   .footer {
     flex-shrink: 0;
@@ -21,7 +25,7 @@
   /* stylelint-disable */
   font-weight: 400 !important;
   /* stylelint-enable */
-  font-family: $ff-rouble;
+  // font-family: $ff-rouble;
   /* stylelint-disable */
   text-transform: lowercase !important;
   /* stylelint-enable */

@@ -1,0 +1,28 @@
+.page-header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: size(28px) 0;
+
+  background-color: $color-transparent;
+
+  .container {
+    display: flex;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  &__logo {
+    color: $color-default-white;
+  }
+
+  &__toggle {
+    display: none;
+  }
+}

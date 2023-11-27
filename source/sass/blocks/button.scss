@@ -1,0 +1,29 @@
+.button {
+  display: inline-flex;
+  padding: size(12px) size(20px);
+
+  color: $color-default-white;
+
+  background-image: $vermilion-to-scarlet;
+  border: none;
+  cursor: pointer;
+
+  transition: opacity $trans-default;
+  border-radius: size(8px);
+
+  &--outline {
+    background-image: none;
+    background-color: $color-transparent;
+    box-shadow: 0 0 0 1px $color-default-white inset;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+
+    pointer-events: none;
+  }
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+}

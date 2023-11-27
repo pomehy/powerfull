@@ -1,18 +1,32 @@
-// @font-face {
-//   font-style: normal;
-//   font-weight: 400;
-//   font-family: "Rouble";
-
-//   font-display: swap;
-//   src:
-//     url("../fonts/rouble.woff2") format("woff2");
-// }
-
 @font-face {
   font-style: normal;
   font-weight: 400;
-  font-family: "";
+  font-family: "Urbanist";
 
   font-display: swap;
-  src: url("../fonts/.woff2") format("woff2");
+  src:
+    url("../fonts/urbanist-regular.woff2") format("woff2"),
+    url("../fonts/urbanist-regular.woff") format("woff");
+}
+
+@font-face {
+  font-style: bold;
+  font-weight: 700;
+  font-family: "Urbanist";
+
+  font-display: swap;
+  src:
+    url("../fonts/urbanist-bold.woff") format("woff2"),
+    url("../fonts/urbanist-bold.woff") format("woff");
+}
+
+@font-face {
+  font-style: black;
+  font-weight: 900;
+  font-family: "Urbanist";
+
+  font-display: swap;
+  src:
+    url("../fonts/urbanist-black.woff2") format("woff2"),
+    url("../fonts/urbanist-black.woff") format("woff");
 }

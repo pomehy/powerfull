@@ -1,0 +1,22 @@
+.about {
+  &__title {
+    margin-top: 0;
+    margin-bottom: size(40px);
+  }
+
+  &__image-wrapper {
+    img {
+      width: 100%;
+      border-radius: size(10px);
+    }
+  }
+
+  &__gallery {
+    margin-top: size(120px);
+  }
+
+  &__gallery-title {
+    margin-bottom: size(40px);
+    text-align: center;
+  }
+}

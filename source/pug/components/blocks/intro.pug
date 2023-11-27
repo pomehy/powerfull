@@ -2,9 +2,11 @@ mixin intro()
   .intro
     //- вставлять блоки во внешний контейнер неверно
     //- все блоки содержат в себе container без доп класса tutorial__wrapper
+    .intro__video-bg-wrapper
+      video.intro__video-bg(width="1920" height="1080" preload="auto" autoplay muted playsinline loop src="video/video-intro.mp4")
     .container
-      p(style="margin-top: 40px;") Текст&nbsp;с&nbsp;мнемониками
-
-      p(style="margin-top: 40px;") Пример использования +img()
-      p(style="margin-bottom: 40px;")
-        +img("content", "placeholder", "png", 120, 120, "Пример")
+      .intro__content
+        .intro__title.title-h1.text-uppercase Online fitness coaching
+        .intro__description.text-md Whatever your goals, we&nbsp;accomplish them together
+        +button({text: "Start 14-day free trial"}).button--outline.intro__button
+    .intro__note.text-md We&nbsp;have #[span.text-accent 300+] Satisfied Clients
