@@ -1,8 +1,46 @@
 .page-section {
-  padding-top: size(120px);
+  position: relative;
+  padding-top: size(160px);
+  background-color: $color-main-black;
+
+  @include vp-1023 {
+    padding-top: size-t(140px);
+  }
+
+  @include vp-767 {
+    padding-top: size-m(120px);
+  }
+
+  &--decor {
+    .page-section__body,
+    .page-section__grid {
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-section__header {
+      z-index: 2;
+    }
+  }
+
+  &__trigger {
+    position: absolute;
+    top: 0;
+    height: 100rem;
+    pointer-events: none;
+  }
 
   &__header {
-    margin-bottom: size(60px);
+    margin-bottom: size(80px);
+    overflow: hidden;
+
+    @include vp-1023 {
+      margin-bottom: size-t(60px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(40px);
+    }
   }
 
   &__header--center {
@@ -11,6 +49,14 @@
     align-items: center;
     text-align: center;
     margin-bottom: size(40px);
+
+    @include vp-1023 {
+      margin-bottom: size-t(40px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(40px);
+    }
   }
 
   &__title-wrapper {
@@ -21,22 +67,67 @@
     min-height: size(100px);
 
     text-transform: uppercase;
-    overflow-y: hidden;
+
+    @include vp-1023 {
+      min-height: size-t(80px);
+    }
+
+    @include vp-767 {
+      min-height: size-m(80px);
+    }
   }
 
   &__title {
+    position: relative;
+    z-index: 1;
     margin-top: 0;
     margin-bottom: 0;
   }
 
   &__title-bg {
     position: absolute;
+    // min-width: size(1440px);
     bottom: 0;
-    opacity: 0.3;
+    opacity: 0.1;
+    transform: translateX(size(1440px));
+
+    white-space: nowrap;
+
+    @include vp-1023 {
+      transform: translateX(size-t(768px));
+      bottom: size-t(-3px);
+    }
+
+    @include vp-767 {
+      transform: translateX(size-m(375px));
+      font-size: size-m(80px);
+    }
+
+    &--reverse {
+      transform: translateX(size(-1440px));
+
+      @include vp-1023 {
+        transform: translateX(size-t(-768px));
+      }
+    }
   }
 
   &__description {
+    margin-top: size(20px);
+    margin-bottom: 0;
     max-width: size(620px);
+    line-height: 120%;
+
+    @include vp-1023 {
+      max-width: size-t(500px);
+      margin-top: size-t(18px);
+      line-height: 130%;
+    }
+
+    @include vp-767 {
+      max-width: 100%;
+      margin-top: size-m(18px);
+    }
   }
 
   &__grid {
@@ -44,9 +135,24 @@
     grid-template-columns: 1fr 1fr;
     column-gap: size(60px);
 
+    @include vp-1023 {
+      grid-template-columns: 1fr;
+      column-gap: size-t(60px);
+    }
+
     &--col-3 {
       grid-template-columns: 1fr 1fr 1fr;
       gap: size(20px);
+
+      @include vp-1023 {
+        grid-template-columns: 1fr 1fr;
+        gap: size-t(20px);
+      }
+
+      @include vp-767 {
+        grid-template-columns: 1fr;
+        gap: size-m(16px);
+      }
     }
   }
 
@@ -54,6 +160,10 @@
     p {
       margin-bottom: size(20px);
       line-height: 110%;
+
+      @include vp-1023 {
+        margin-bottom: size-t(20px);
+      }
     }
   }
 }

@@ -2,7 +2,7 @@
   const experiseItems = [
     {
       title: "Strength&nbsp;training",
-      text: "I craft personalized programs to help you sculpt lean muscle while incinerating fat",
+      text: "We craft personalized programs to help you sculpt lean muscle while incinerating fat",
       img: {
         path: 'content/expertise',
         image: 'expert-str',
@@ -14,7 +14,7 @@
     },
     {
       title: "Bodybuilding",
-      text: "Together, we’ll chase your body’s dream shape and strength",
+      text: "Together, we will chase your body’s dream shape and strength",
       img: {
         path: 'content/expertise',
         image: 'expert-bb',
@@ -26,7 +26,7 @@
     },
     {
       title: "POWERLIFTING",
-      text: "Whether for personal strength or competition. I’ll guide you toward your strongest self",
+      text: "Whether for personal strength or competition. We will guide you toward your strongest self",
       img: {
         path: 'content/expertise',
         image: 'expert-pl',
@@ -38,7 +38,7 @@
     },
     {
       title: "Physiotherapy",
-      text: "I specialize in correcting poor posture, enhancing hip mobility, and aiding in post-accident rehabilitation.",
+      text: "We specialize in correcting poor posture, enhancing hip mobility, and aiding in post-accident rehabilitation.",
       img: {
         path: 'content/expertise',
         image: 'expert-phys',
@@ -50,7 +50,7 @@
     },
     {
       title: "Endurance",
-      text: "My custom cardio programs ensure efficient fat burn in less time",
+      text: "Our custom cardio programs ensure efficient fat burn in less time",
       img: {
         path: 'content/expertise',
         image: 'expert-end',
@@ -62,7 +62,7 @@
     },
     {
       title: "Nutrition",
-      text: "Bid farewell to diets; I’ll educate you on nourishing your unique needs",
+      text: "Bid farewell to diets; we will educate you on nourishing your unique needs",
       img: {
         path: 'content/expertise',
         image: 'expert-nut',
@@ -75,19 +75,19 @@
   ]
 
 mixin expertise()
-  section.expertise.page-section
+  section.expertise.page-section.page-section--decor
     .container
       .page-section__header.page-section__header--center
-        h2.page-section__title.title-h2 Our Areas Of&nbsp;Expertise
-        p.page-section__description.text-md At the core of our online coaching, we specialize in six key areas designed to elevate your fitness journey
+        h2.page-section__title.title-h2(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") Our Areas Of&nbsp;Expertise
+        p.page-section__description.text-md(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") At the core of our online coaching, we specialize in six key areas designed to elevate your fitness journey
       .page-section__body
         .page-section__grid.page-section__grid--col-3
-          each card in experiseItems
-            article.card.card--button
-              .card__image-wrapper
-                +picture(card.img.path, card.img.image, card.img.format, card.img.width, card.img.height, card.img.altText)
-              .card__content
+          each card, index in experiseItems
+            article.card.card--button(data-sal="slide-up", data-sal-duration="600", data-sal-delay=index*50)
+              .card__image-wrapper(data-image-lazy)
+                +picture-lazy(card.img.path, card.img.image, card.img.format, card.img.width, card.img.height, card.img.altText)
+              .card__content.text-center
                 h3.card__title.title-h3.text-uppercase !{card.title}
-                p.card__description !{card.text}
-                +button({text: "Start 14-day free trial"}).button--outline.card__button(data-open-modal="main-form")
-        .expertise__footer-text.title-h2 Leverage our expertise to unlock new levels of physical excellence
+                p.card__description.text !{card.text}
+                +button({text: "Start 14-days free trial"}).button.card__button(data-open-modal="main-form")
+      .decor-flash.decor-flash--expertise

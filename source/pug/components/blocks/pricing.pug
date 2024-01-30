@@ -1,0 +1,53 @@
+
+mixin pricing()
+  section.pricing.page-section(id="pricing", data-section)
+    .page-section__trigger(data-section-trigger)
+    .pricing__image-wrapper(data-image-lazy)
+      +picture-lazy('content', 'pricing-bg', 'jpg', 1440, 768, 'ivan trainig')
+    .page-section__header
+      .container
+        .page-section__title-wrapper
+          .page-section__title-bg.page-section__title-bg--reverse.title-h1(data-title-bg="pricing") PRICING
+          h2.page-section__title.title-h2(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200") PRICING
+
+    .page-section__body
+      .container
+        .pricing__header(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200")
+          .pricing__plan-title.title-h3 Plan duration:
+          .pricing__controls
+            button.button.button--outline(data-pricing-button="monthly", data-value="5").is-active
+              span Monthly
+            button.button.button--outline(data-pricing-button="paid in full", data-value="4")
+              span Paid&nbsp;in&nbsp;full
+              span.pricing__sale.text-accent 20% OFF
+              span.tooltip
+                +icon('icon-tooltip', 21, 21).tooltip__icon
+                span.tooltip__content
+                  span 3&nbsp;months
+        .pricing__body
+          .price(data-price="parent", data-sal="slide-up", data-sal-duration="600", data-sal-delay="200")
+            .price__value-wrapper
+              .price__value $#[span(data-price="value") 5]
+              //- span.price__currency $
+              span.price__duration per&nbsp;day
+              span.price__note starting
+          .content-item(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200")
+            .content-item__features
+              .content-item__features-item No cancellation fees
+              .content-item__features-item No contracts
+              .content-item__features-item Cancel anytime
+            h3.content-item__title.title-h3 Personal & Online coaching
+            ul.content-item__list
+              li.text
+                span Personalized Workouts
+                +icon('icon-marker', 22, 22).icon-marker
+              li.text
+                span Daily feedback & guidance from your certified coach
+                +icon('icon-marker', 22, 22).icon-marker
+              li.text
+                span Personalized Nutrition coaching
+                +icon('icon-marker', 22, 22).icon-marker
+
+            .content-item__footer
+              +button({text: "Get started"})(data-open-modal="main-form")
+              //- +button({text: "Know more"})(data-open-modal="know-more").button--outline

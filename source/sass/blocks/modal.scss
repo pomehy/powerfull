@@ -33,13 +33,14 @@
     display: flex;
     flex-shrink: 0;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     width: 100%;
     min-height: 100%;
-    padding: 60px 40px;
+    padding: size(40px);
+
 
     @include vp-767 {
-      padding: 60px 16px;
+      padding: size(60px) size(16px);
     }
   }
 
@@ -57,25 +58,51 @@
   &__content {
     position: relative;
 
-    width: 600px;
-    padding: 40px;
+    width: size(840px);
+    padding-top: size(40px);
+    padding-bottom: size(40px);
+    padding-left: size(40px);
+    padding-right: size(40px);
+    margin-bottom: auto;
+
 
     background-color: $color-default-white;
 
+    border-radius: size(20px);
+
     @include vp-767 {
       width: 100%;
-      padding: 20px;
+      padding: size(20px);
+    }
+  }
+
+  &--main-form {
+    // overflow: hidden;
+
+    .modal__wrapper {
+      padding: 0;
+      // height: 100%;
+    }
+
+    .modal__content {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-right: 0;
+      padding-left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
     }
   }
 
   &__close-btn {
     position: absolute;
-    top: 22px;
-    right: 22px;
+    top: size(0px);
+    right: size(0px);
     z-index: 1;
 
-    width: 40px;
-    height: 40px;
+    width: size(80px);
+    height: size(80px);
     padding: 0;
 
     background: $color-transparent;
@@ -83,6 +110,31 @@
     cursor: pointer;
 
     transition: opacity $trans-default;
+
+    @include vp-1023 {
+      width: size-t(80px);
+      height: size-t(80px);
+    }
+
+    @include vp-767 {
+      width: size-m(60px);
+      height: size-m(60px);
+    }
+
+    svg {
+      width: size(40px);
+      height: size(40px);
+
+      @include vp-1023 {
+        width: size-t(20px);
+        height: size-t(20px);
+      }
+
+      @include vp-767 {
+        width: size-m(24px);
+        height: size-m(24px);
+      }
+    }
 
     @include hover-focus {
       opacity: 0.5;
@@ -113,11 +165,40 @@
     transition: none;
   }
 
+  &--feedback {
+    .modal__content {
+      margin: auto;
+    }
+  }
+
   &.is-active {
     transform: scale(1);
     visibility: visible;
     opacity: 1;
 
     pointer-events: auto;
+  }
+
+  &--success {
+    .modal__wrapper {
+      padding: 0;
+    }
+
+    .modal__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-right: 0;
+      padding-left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+    }
+
+    .modal__close-btn {
+      color: $color-default-white;
+    }
   }
 }

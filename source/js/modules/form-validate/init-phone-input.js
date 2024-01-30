@@ -1,5 +1,5 @@
-const baseCountryCode = '+7';
-const baseMatrix = ' (___) ___ __ __';
+const baseCountryCode = '+1';
+const baseMatrix = ' (___) ___ ____';
 const phoneLength = baseCountryCode.length + baseMatrix.length;
 
 const onPhoneInputInput = (e) => {

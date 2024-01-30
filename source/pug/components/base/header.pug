@@ -27,27 +27,37 @@ mixin header(headerMods, currentUrl)
       },
     ]
 
-  header.page-header(class=headerMods)
+  header.page-header(class=headerMods)(data-header, data-fix-block)
     .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        div.page-header__logo
-          +icon("logo", 200, 57).logo
-      else
-        a.page-header__logo(href="index.html", aria-label="Go to top page")
-          +icon("logo", 200, 57).logo
-      .page-header__nav
-        nav.main-nav
-          .main-nav__wrapper
-            ul.main-nav__list
-              each link in headerLinks
-                - const activeState = currentUrl === link.href
-                li.main-nav__item
-                  if(activeState)
-                    span.main-nav__link.is-active= link.text
-                  else
-                    a.main-nav__link(href=link.href)= link.text
-        .page-header__buttons
-          +button({text: "Get started"})(data-open-modal="main-form")
-      button.page-header__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-            +icon("icon-burger", 20, 20)
+      .page-header__content
+        //- if(currentUrl === "index.html")
+        //-   //- lighthouse снимает 10 баллов SEO за <a> без href
+        //-   div.page-header__logo
+        //-     +icon("logo", 200, 57).logo
+        //- else
+        a.page-header__logo(href="#top", aria-label="Go to top page", data-move-to)
+          +picture('content', 'logo', 'png', 200, 57, 'Powerful team logo').logo
+        .page-header__nav
+          nav.main-nav
+            .main-nav__wrapper
+              ul.main-nav__list
+                each link in headerLinks
+                  - const activeState = currentUrl === link.href
+                  li.main-nav__item
+                    if(activeState)
+                      span.main-nav__link.is-active= link.text
+                    else
+                      a.main-nav__link(href=link.href, data-move-to, data-main-nav-link)= link.text
+          .page-header__contacts
+            .page-header__contacts-list
+              a(href="tel:+19419325598",  target="_blank", rel="nofollow noopener noreferrer").page-header__contact-link +1 (941) 932-5598
+              a(href="mailto:info@powerful-team.com",  target="_blank", rel="nofollow noopener noreferrer").page-header__contact-link info@powerful-team.com
+          .page-header__buttons
+            +button({text: "Get started"})(data-open-modal="main-form")
+            //- .toggle-theme
+            //-   input(type="checkbox").toggle-theme__input.visually-hidden
+            //-   .toggle-theme__
+        button.page-header__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-burger)
+              span
+              span
+              span

@@ -1,0 +1,21 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Page no found - 404 error"
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const headerMods = ""
+  - const hasFooter = false
+  - const footerMods = ""
+  - const currentUrl = "404.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const openGraf = true
+
+block main
+  main
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    +page-404()
+
+
+block modals
+

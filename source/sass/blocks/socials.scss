@@ -1,0 +1,49 @@
+.socials {
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    margin-bottom: size(16px);
+
+    padding-left: size(44px);
+
+    @include vp-1023 {
+      margin-bottom: size-t(16px);
+      padding-left: size-t(44px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(16px);
+      padding-left: size-m(44px);
+      font-size: size-m(20px);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+
+      width: size(32px);
+      height: 1px;
+      background-color: $color-default-white;
+
+      @include vp-1023 {
+        width: size-t(32px);
+      }
+
+      @include vp-767 {
+        width: size-m(32px);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: size(12px);
+
+    @include vp-1023 {
+      gap: size-t(12px);
+    }
+  }
+}

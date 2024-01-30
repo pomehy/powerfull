@@ -1,0 +1,56 @@
+.slider-controls {
+  display: flex;
+  gap: size(10px);
+
+  @include vp-1023 {
+    gap: size-t(10px);
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: size(52px);
+    height: size(52px);
+    color: $color-default-white;
+    background-color: $color-transparent;
+    border: 1px solid $color-default-white;
+    border-radius: 50%;
+
+    transition: border $trans-default, background $trans-default, opacity $trans-default;
+    cursor: pointer;
+
+    @include vp-1023 {
+      width: size-t(52px);
+      height: size-t(52px);
+    }
+
+    svg {
+      width: size(32px);
+      height: size(32px);
+      transition: transform $trans-default;
+
+      @include vp-1023 {
+        width: size-t(32px);
+        height: size-t(32px);
+      }
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    @include hover-focus {
+      background-color: $color-vermilion;
+      border: 1px solid $color-vermilion;
+    }
+
+    &:active {
+      svg {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

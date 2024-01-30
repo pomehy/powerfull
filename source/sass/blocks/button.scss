@@ -1,4 +1,7 @@
 .button {
+  position: relative;
+  overflow: hidden;
+
   display: inline-flex;
   padding: size(12px) size(20px);
 
@@ -8,13 +11,77 @@
   border: none;
   cursor: pointer;
 
-  transition: opacity $trans-default;
+  transition: all $trans-default;
   border-radius: size(8px);
+
+  @include vp-1023 {
+    padding: size-t(12px) size-t(20px);
+    border-radius: size-t(8px);
+    font-size: size-t(16px);
+  }
+
+  @include vp-767 {
+    padding: size-m(16px) size-m(24px);
+    font-size: size-m(16px);
+    border-radius: size-m(8px);
+    justify-content: center;
+  }
+
+  &:after {
+    background: $color-default-white;
+    content: "";
+    height: size(155px);
+    left: size(-75px);
+    opacity: .35;
+    position: absolute;
+    top: size(-50px);
+    transform: rotate(35deg);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: size(50px);
+    z-index: 1;
+
+    @include vp-1023 {
+      height: size-t(155px);
+      left: size-t(-75px);
+      top: size-t(-50px);
+      width: size-t(50px);
+    }
+  }
 
   &--outline {
     background-image: none;
     background-color: $color-transparent;
     box-shadow: 0 0 0 1px $color-default-white inset;
+    overflow: visible;
+
+    &:after {
+      display: none;
+    }
+
+    &.is-active {
+      background-color: $color-default-white;
+      color: $color-main-black;
+    }
+  }
+
+  &--dark {
+    color: $color-main-black;
+    box-shadow: 0 0 0 1px $color-main-black inset;
+  }
+
+  &--light {
+    color: $color-main-black;
+    background-image: none;
+    background-color: $color-default-white;
+    box-shadow: none;
+
+    &::after {
+      display: none;
+    }
+
+    @include hover-focus {
+      opacity: 0.7;
+    }
   }
 
   &:disabled {
@@ -24,6 +91,20 @@
   }
 
   @include hover-focus {
-    opacity: 0.8;
+    &:after {
+      left: 120%;
+      transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+  }
+
+  @include active {
+    opacity: 0.7;
+  }
+}
+
+.button--outline {
+  @include hover-focus {
+    background-color: $color-default-white;
+    color: $color-main-black;
   }
 }

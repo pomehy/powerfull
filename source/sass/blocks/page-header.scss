@@ -4,18 +4,176 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: size(28px) 0;
+  padding: size(32px) 0 size(16px) 0;
 
   background-color: $color-transparent;
+  transition: transform 0.6s ease, background-color 0.3s ease;
 
-  .container {
+  @include vp-1023 {
+    padding: size-t(16px) 0;
+
+    &.is-active {
+      .page-header__nav {
+        transform: translateY(0);
+      }
+
+      .page-header__top {
+        opacity: 1;
+        pointer-events: auto;
+        transition: opacity $trans-default 0.2s;
+      }
+    }
+  }
+
+  @include vp-767 {
+    padding: size-m(16px) 0;
+  }
+
+  &__contacts {
+    position: absolute;
+    top: 0;
+    right: size(100px);
+
     display: flex;
+    justify-content: flex-end;
+
+    padding-top: size(10px);
+    padding-bottom: size(10px);
+
+    @include vp-1023 {
+      margin-top: size-t(32px);
+      margin-bottom: size(32px);
+      position: static;
+      opacity: 1;
+
+      transition: opacity $trans-default;
+    }
+
+    @include vp-767 {
+      margin-top: size-m(32px);
+      margin-bottom: size-m(32px);
+    }
+  }
+
+  &__contacts-list {
+    display: flex;
+    align-items: center;
+    gap: size(24px);
+    margin-left: auto;
+
+    @include vp-1023 {
+      display: grid;
+      margin-left: 0;
+      gap: size-t(20px);
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @include vp-767 {
+      width: 100%;
+      gap: size-m(16px);
+    }
+
+  }
+
+  &__contact-link {
+    font-size: size(12px);
+    color: $color-default-white;
+
+    transition: color $trans-default;
+
+    @include vp-1023 {
+      font-size: size-t(16px);
+    }
+
+    @include vp-767 {
+      font-size: size-m(16px);
+    }
+
+    @include hover-focus {
+      color: $color-vermilion;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    transition: all 0.6s ease;
+  }
+
+  &--painted {
+    &::before {
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+    }
+  }
+
+  &.is-hidden {
+    transform: translateY(-100%);
   }
 
   &__nav {
     display: flex;
     align-items: center;
     margin-left: auto;
+    padding-left: size(40px);
+
+    transition: transform $trans-default;
+
+    @include vp-1023 {
+      position: fixed;
+
+      flex-direction: column;
+
+      align-items: flex-start;
+      margin-left: 0;
+      padding-top: size-t(65px);
+
+      top: 0;
+      left: 0;
+      width: size-t(360px);
+      height: 100%;
+
+      background-color: $color-default-black-90;
+      backdrop-filter: blur(5px);
+
+      transform: translateX(-100%);
+
+      overflow: auto;
+
+      &::before {
+        content: '';
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color-default-black-30;
+      }
+    }
+
+    @include vp-767 {
+      padding-top: size-m(100px);
+      padding-left: size-m(16px);
+
+      padding-right: size-m(16px);
+      width: 100%;
+    }
   }
 
   &__logo {
@@ -24,5 +182,88 @@
 
   &__toggle {
     display: none;
+    margin-left: auto;
+    background-color: $color-transparent;
+    border: none;
+    padding: 0;
+
+
+    @include vp-1023 {
+      display: block;
+
+      width: size-t(52px);
+      height: size-t(36px);
+      position: relative;
+      transform: rotate(0deg) scale(0.7);
+      transition: .5s ease-in-out;
+      cursor: pointer;
+
+      span {
+        display: block;
+        position: absolute;
+        height: size-t(7px);
+        width: 100%;
+        background: $color-vermilion;
+        border-radius: size-t(7px);
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+
+        &:nth-child(1) {
+          top: 0px;
+        }
+
+        &:nth-child(2) {
+          top: size-t(14px);
+        }
+
+        &:nth-child(3) {
+          top: size-t(28px);
+        }
+      }
+
+      &.is-active {
+        span:nth-child(1) {
+          top: size-t(14px);
+          transform: rotate(135deg);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+          left: size-t(-60px);
+        }
+        span:nth-child(3) {
+          top: size-t(14px);
+          transform: rotate(-135deg);
+        }
+      }
+    }
+
+    @include vp-767 {
+      transform: rotate(0deg) scale(0.95);
+    }
+  }
+
+  &__buttons {
+    @include vp-1023 {
+      margin-top: size-t(40px);
+
+      .button {
+        display: flex;
+        padding: size-t(12px) size-t(28px);
+      }
+    }
+
+    @include vp-767 {
+      margin-top: auto;
+      width: 100%;
+
+      .button {
+        display: flex;
+        margin-bottom: size-m(20px);
+        width: 100%;
+        padding: size-m(16px) size-m(28px);
+      }
+    }
   }
 }

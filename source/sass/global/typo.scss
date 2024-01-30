@@ -2,6 +2,15 @@
   font-weight: 900;
   font-size: size(110px);
   line-height: 90%;
+
+  @include vp-1023 {
+    font-size: size-t(80px);
+    line-height: 100%;
+  }
+
+  @include vp-767 {
+    font-size: size-m(40px);
+  }
 }
 
 .title-h2 {
@@ -9,23 +18,86 @@
   font-size: size(52px);
   line-height: 100%;
   text-transform: uppercase;
+
+  @include vp-1023 {
+    font-size: size-t(44px);
+    line-height: 110%;
+  }
+
+  @include vp-767 {
+    font-size: size-m(32px);
+  }
 }
 
 .title-h3 {
+  font-weight: 700;
   font-size: size(36px);
-  text-transform: uppercase;
+  line-height: 110%;
+
+  @include vp-1023 {
+    font-size: size-t(28px);
+  }
+
+  @include vp-767 {
+    font-size: size-m(24px);
+  }
+}
+
+.text {
+  font-size: size(16px);
+  line-height: 120%;
+
+  @include vp-1023 {
+    font-size: size-t(16px);
+  }
+
+  @include vp-767 {
+    line-height: 130%;
+    font-size: size-m(16px);
+  }
 }
 
 .text-md {
   font-size: size(20px);
+
+  @include vp-1023 {
+    line-height: 110%;
+    font-size: size-t(20px);
+  }
+
+  @include vp-767 {
+    font-size: size-m(18px);
+  }
 }
 
 .text-big {
   font-size: size(24px);
+  line-height: 110%;
+
+  @include vp-1023 {
+    font-size: size-t(24px);
+  }
+
+  @include vp-767 {
+    line-height: 120%;
+    font-size: size-m(20px);
+  }
 }
 
 .text-large {
   font-size: size(32px);
+
+  @include vp-1023 {
+    font-size: size-t(32px);
+  }
+
+  @include vp-767 {
+    font-size: size-m(28px);
+  }
+}
+
+.text-center {
+  text-align: center;
 }
 
 .text-accent {
@@ -34,4 +106,27 @@
 
 .text-uppercase {
   text-transform: uppercase;
+}
+
+.text-link {
+  position: relative;
+  // transition: color $trans-default;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: size(-6px);
+
+    width: 100%;
+    height: size(4px);
+    background-color: $color-vermilion;
+    transition: transform $trans-default;
+    transform-origin: left bottom;
+  }
+
+  @include hover-focus {
+    &::after {
+      transform: scaleY(0.25);
+    }
+  }
 }

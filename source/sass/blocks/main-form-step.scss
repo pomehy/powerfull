@@ -1,0 +1,130 @@
+.main-form-step {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+
+  &.is-empty {
+    .main-form-step__message {
+      visibility: visible;
+      height: size(32px);
+      color: $color-scarlet;
+
+      @include vp-1023 {
+        height: size-t(32px);
+      }
+
+      @include vp-767 {
+        height: size-m(32px);
+      }
+    }
+
+    .custom-toggle__icon {
+      border-color: $color-scarlet;
+    }
+
+    .custom-input {
+      input {
+        border-color: $color-scarlet;
+      }
+    }
+  }
+
+  &__message {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: all $trans-default;
+    font-weight: 700;
+  }
+
+  &__content {
+    margin-top: size(28px);
+
+    @include vp-1023 {
+      margin-top: size-t(28px);
+    }
+
+    @include vp-767 {
+      margin-top: size-m(28px);
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__description {
+    margin-top: size(16px);
+    margin-bottom: size(32px);
+
+    @include vp-1023 {
+      margin-top: size-t(16px);
+      margin-bottom: size-t(32px);
+    }
+
+    @include vp-767 {
+      margin-top: size-m(16px);
+      margin-bottom: size-m(32px);
+    }
+  }
+
+  &__label {
+    margin-bottom: size(12px);
+
+    @include vp-1023 {
+      margin-bottom: size-t(12px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(12px);
+    }
+  }
+
+  &__checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: size(10px);
+
+    @include vp-1023 {
+      gap: size-t(10px);
+    }
+
+    @include vp-1023 {
+      gap: size-m(10px);
+    }
+  }
+
+  &__input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: size(40px);
+    row-gap: size(20px);
+
+    margin-top: size(20px);
+
+    @include vp-1023 {
+      column-gap: size-t(40px);
+      row-gap: size-t(20px);
+
+      margin-top: size-t(20px);
+    }
+
+    @include vp-767 {
+      grid-template-columns: 1fr;
+      column-gap: 0;
+      row-gap: size-m(20px);
+
+      margin-top: size-m(20px);
+    }
+  }
+
+  .custom-input {
+    padding: 0;
+
+    input {
+      width: 100%;
+    }
+  }
+}

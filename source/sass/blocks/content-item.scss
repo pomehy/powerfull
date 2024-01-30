@@ -1,0 +1,178 @@
+.content-item {
+  position: relative;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: size(20px);
+
+    @include vp-1023 {
+      margin-bottom: size-t(24px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(24px);
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: size(16px);
+
+    @include vp-1023 {
+      margin-bottom: size-t(16px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(16px);
+    }
+  }
+
+  &__description {
+    margin: size(24px) 0;
+
+    @include vp-1023 {
+      margin: size-t(20px) 0;
+    }
+
+    @include vp-767 {
+      margin: size-m(20px) 0;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    top: size(-80px);
+    right: 0;
+    font-weight: 900;
+    font-size: size(200px);
+    line-height: 1;
+
+    color: $color-default-white-35;
+
+    @include vp-1023 {
+      top: size-t(-80px);
+      font-size: size-t(200px);
+    }
+
+    @include vp-767 {
+      top: size-m(-70px);
+      font-size: size-m(160px);
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: size(16px);
+
+    max-width: size(400px);
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    @include vp-1023 {
+      gap: size-t(16px);
+      max-width: none;
+    }
+
+    @include vp-767 {
+      max-width: size-m(320px);
+      gap: size-m(16px);
+      margin-top: size-m(32px);
+    }
+
+    li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-left: size(38px);
+
+      @include vp-1023 {
+        padding-left: size-t(38px);
+      }
+
+      @include vp-767 {
+        padding-left: size-m(38px);
+        line-height: 110%;
+      }
+    }
+
+    .icon-marker {
+      position: absolute;
+      // top: size(-2px);
+      left: 0;
+
+      width: size(22px);
+      height: size(22px);
+
+      @include vp-1023 {
+        width: size-t(22px);
+        height: size-t(22px);
+      }
+
+      @include vp-767 {
+        width: size-m(24px);
+        height: size-m(24px);
+      }
+    }
+  }
+
+  &__features {
+    display: flex;
+
+    gap: size(10px);
+    margin-bottom: size(16px);
+
+    @include vp-1023 {
+      gap: size-t(10px);
+      margin-bottom: size-t(16px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(16px);
+      justify-content: center;
+    }
+  }
+
+  &__features-item {
+    padding: size(4px) size(6px);
+    background-color: $color-default-white;
+    color: $color-main-black;
+    border-radius: size(4px);
+
+    font-size: size(14px);
+
+    @include vp-1023 {
+      font-size: size-t(14px);
+      padding: size-t(4px) size-t(6px);
+      border-radius: size-t(4px);
+    }
+
+    @include vp-767 {
+      width: 100%;
+      font-size: size-m(13px);
+      padding: size-m(6px) size-m(6px);
+      white-space: nowrap;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    gap: size(16px);
+    margin-top: size(40px);
+
+    @include vp-1023 {
+      gap: size-t(16px);
+      margin-top: size-t(40px);
+    }
+
+    @include vp-767 {
+      gap: size-m(16px);
+      margin-top: size-m(40px);
+
+      .button {
+        width: 100%;
+      }
+    }
+  }
+}

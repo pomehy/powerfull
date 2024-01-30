@@ -1,22 +1,115 @@
 .about {
+  margin-top: 100vh;
+  overflow: hidden;
+  background-color: $color-main-black;
+
   &__title {
     margin-top: 0;
     margin-bottom: size(40px);
+
+    @include vp-1023 {
+      margin-bottom: size-t(40px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(40px);
+    }
   }
 
   &__image-wrapper {
     img {
       width: 100%;
       border-radius: size(10px);
+
+      @include vp-1023 {
+        border-radius: 0;
+      }
+    }
+
+    @include vp-1023 {
+      position: absolute;
+      top: 0;
+      left: size-t(-40px);
+      width: calc(size-t(80px) + 100%);
+      max-width: none;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(0deg, $color-main-black 25%, transparent 75%);
+      }
+    }
+
+    @include vp-767 {
+      left: size-m(-40px);
+      width: calc(size-m(80px) + 100%);
+    }
+  }
+
+  &__content {
+    @include vp-1023 {
+      position: relative;
+      z-index: 1;
+
+      padding-top: size-t(350px);
     }
   }
 
   &__gallery {
+    position: relative;
+    z-index: 1;
     margin-top: size(120px);
+
+    @include vp-1023 {
+      margin-top: size-t(120px);
+    }
+
+    @include vp-767 {
+      margin-top: size-m(120px);
+    }
   }
 
   &__gallery-title {
-    margin-bottom: size(40px);
+    margin-bottom: size(60px);
     text-align: center;
+
+    @include vp-1023 {
+      margin-bottom: size-t(40px);
+      font-size: size-t(36px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(40px);
+      font-size: size-m(26px);
+      text-align: start;
+    }
+  }
+
+  &__text-wrapper {
+    p {
+      margin-top: 0;
+      margin-bottom: size(24px);
+      line-height: 110%;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      @include vp-1023 {
+        margin-bottom: size-t(20px);
+        line-height: 120%;
+      }
+    }
+  }
+
+  .decor-flash {
+    @include vp-1023 {
+      display: none;
+    }
   }
 }

@@ -1,0 +1,93 @@
+.tooltip {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  right: size(-10px);
+  top: size(-10px);
+
+  @include vp-1023 {
+    right: size-t(-10px);
+    top: size-t(-10px);
+  }
+
+  @include vp-767 {
+    right: size-m(-10px);
+    top: size-m(-10px);
+  }
+
+  &__icon {
+    width: size(20px);
+    height: size(20px);
+
+    @include vp-1023 {
+      width: size-t(20px);
+      height: size-t(20px);
+    }
+
+    @include vp-767 {
+      width: size-m(20px);
+      height: size-m(20px);
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: size(-50px);
+    display: flex;
+    justify-content: center;
+
+    padding: size(12px);
+    color: $color-main-black;
+    background-color: $color-default-white;
+    border-radius: size(12px);
+    font-size: size(12px);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $trans-default;
+
+    @include vp-1023 {
+      top: size-t(-50px);
+      padding: size-t(12px);
+      border-radius: size-t(12px);
+      font-size: size-t(12px);
+    }
+
+    @include vp-767 {
+      top: size-m(-50px);
+      right: 0;
+      padding: size-m(12px);
+      border-radius: size-m(4px);
+      font-size: size-m(12px);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: size(-6px);
+      width: size(12px);
+      height: size(12px);
+      background-color: $color-default-white;
+      border-radius: size(2px);
+      transform: rotate(45deg);
+
+      @include vp-1023 {
+        bottom: size-t(-6px);
+        width: size-t(12px);
+        height: size-t(12px);
+        border-radius: size-t(2px);
+      }
+
+      @include vp-767 {
+        bottom: size-m(-3px);
+        right: size-m(6px);
+      }
+    }
+  }
+
+  &:hover {
+    .tooltip__content {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.reviews-slider {
+  overflow: visible;
+
+  &__item {
+    width: auto;
+    padding-right: size(20px);
+
+    @include vp-1023 {
+      padding-right: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+}

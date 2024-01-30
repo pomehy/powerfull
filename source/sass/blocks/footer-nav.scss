@@ -1,0 +1,49 @@
+.footer-nav {
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: size(20px);
+
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @include vp-1023 {
+      gap: size-t(16px);
+    }
+
+    @include vp-767 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: size-m(16px);
+    }
+  }
+
+  &__item {
+    @include vp-767 {
+      text-align: center;
+    }
+
+  }
+
+  &__link {
+    color: $color-default-white-70;
+    transition: color $trans-default;
+
+    @include vp-1023 {
+      font-size: size-t(14px);
+    }
+
+    @include vp-767 {
+      font-size: size-m(18px);
+      text-transform: uppercase;
+    }
+
+    @include hover-focus {
+      color: $color-default-white;
+    }
+  }
+}

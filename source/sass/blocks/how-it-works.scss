@@ -1,0 +1,244 @@
+.how-it-works {
+  padding-bottom: size(240px);
+
+  @include vp-1023 {
+    padding-bottom: size-t(200px);
+  }
+
+  @include vp-767 {
+    position: relative;
+    padding-bottom: size-m(140px);
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+
+      height: size-m(300px);
+      width: 100%;
+
+      background-image: $black-to-top;
+    }
+  }
+
+  .content-item {
+    height: size(450px);
+    margin-top: size(150px);
+    margin-bottom: size(200px);
+
+    @include vp-1023 {
+      height: size-t(400px);
+      margin-top: size-t(150px);
+      margin-bottom: size-t(200px);
+    }
+
+    @include vp-767 {
+      height: size-m(600px);
+    }
+
+    &:first-of-type {
+      margin-top: 0;
+      margin-bottom: size(350px);
+
+      @include vp-1023 {
+        margin-bottom: size-t(235px);
+      }
+    }
+
+    &:last-of-type {
+      height: size(560px);
+      margin-bottom: 0;
+
+      @include vp-1023 {
+        height: size-t(460px);
+      }
+
+      @include vp-767 {
+        margin-top: size-m(100px);
+        height: size-m(430px);
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    column-gap: size(100px);
+    grid-template-columns: max-content 1fr;
+
+    @include vp-1023 {
+      column-gap: size-t(80px);
+    }
+
+    @include vp-767 {
+      column-gap: 0;
+    }
+  }
+
+  &__list {
+    padding-top: size(100px);
+    max-width: size(500px);
+
+    @include vp-1023 {
+      padding-top: size-t(80px);
+      max-width: size-t(450px);
+    }
+
+    @include vp-767 {
+      padding-top: size-m(100px);
+      position: relative;
+      z-index: 2;
+
+      max-width: none;
+    }
+  }
+
+  &__phone {
+    position: sticky;
+    top: size(130px);
+    z-index: 1;
+    width: size(276px);
+    height: size(560px);
+
+    overflow: hidden;
+
+    @include vp-1023 {
+      top: size-t(140px);
+      width: size-t(250px);
+      height: size-t(507px);
+    }
+
+    @include vp-767 {
+      top: size-m(78px);
+      overflow: visible;
+      width: 0;
+      height: size-m(525px);
+    }
+
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+
+      @include vp-767 {
+        display: none;
+      }
+    }
+
+    .how-it-works__phone-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: size(276px);
+      height: size(560px);
+
+      @include vp-1023 {
+        width: size-t(250px);
+        height: size-t(507px);
+      }
+
+      @include vp-767 {
+        display: none;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__phone-container {
+    position: absolute;
+    top: 0;
+    left: size(8px);
+    width: size(258px);
+    height: size(558px);
+
+    border-radius: size(45px);
+    overflow: hidden;
+
+    @include vp-1023 {
+      width: size-t(240px);
+      height: size-t(504px);
+      border-radius: size-t(45px);
+    }
+
+    @include vp-767 {
+      width: size-m(375px);
+      height: size-m(600px);
+      left: size-m(-16px);
+      border-radius: 0;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        top: 0;
+        left: 0;
+
+        background-color: $color-default-black;
+        opacity: 0.75;
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: size(45px);
+
+      @include vp-1023 {
+        border-radius: size-t(45px);
+      }
+
+      @include vp-767 {
+        border-radius: 0;
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity $trans-default;
+
+    .is-mobile {
+      display: none;
+    }
+
+    @include vp-767 {
+      &:last-of-type {
+        img {
+          display: none;
+        }
+
+        .is-mobile {
+          display: block;
+
+          img {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &.is-show {
+      opacity: 1;
+    }
+  }
+}

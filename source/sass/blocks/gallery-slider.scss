@@ -1,11 +1,37 @@
 .gallery-slider {
+  overflow: visible;
+
+  transition-timing-function: linear;
+
   &__item {
     width: auto;
     padding-right: size(20px);
+
+    @include vp-1023 {
+      margin-right: size-t(20px);
+    }
+
+    @include vp-767 {
+      margin-right: size-m(8px);
+    }
   }
+
   &__img {
     img {
+      width: size(350px);
       border-radius: size(10px);
+
+      @include vp-1023 {
+        width: size-t(350px);
+        margin-right: size-t(10px);
+        border-radius: size-t(10px);
+      }
+
+      @include vp-767 {
+        width: size-m(350px);
+        margin-right: size-m(10px);
+        border-radius: size-m(10px);
+      }
     }
   }
 }

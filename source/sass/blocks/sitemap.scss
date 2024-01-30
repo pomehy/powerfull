@@ -1,0 +1,15 @@
+.sitemap {
+  &__logo {
+    margin: 60px 0;
+  }
+
+  ol {
+    display: grid;
+    gap: 20px;
+    font-size: 20px;
+
+    a {
+      color: $color-default-white;
+    }
+  }
+}

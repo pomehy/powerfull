@@ -1,64 +1,172 @@
 -
   const aboutGallery = [
     {
-      name: "a-gallery-1",
+      name: "gallery-1",
       format: "jpg",
       width: 350,
       height: 410,
-      altText: 'powerfull img',
+      altText: 'powerfull team',
     },
     {
-      name: "a-gallery-2",
+      name: "gallery-2",
       format: "jpg",
       width: 350,
       height: 451,
-      altText: 'powerfull img',
+      altText: 'powerfull team',
     },
     {
-      name: "a-gallery-3",
+      name: "gallery-3",
       format: "jpg",
       width: 350,
       height: 376,
-      altText: 'powerfull img',
+      altText: 'powerfull team',
     },
     {
-      name: "a-gallery-4",
+      name: "gallery-4",
       format: "jpg",
       width: 350,
       height: 410,
-      altText: 'powerfull img',
+      altText: 'powerfull team',
     },
     {
-      name: "a-gallery-5",
+      name: "gallery-5",
       format: "jpg",
       width: 350,
       height: 465,
-      altText: 'powerfull img',
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-6",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-7",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-8",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-9",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-10",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-11",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-12",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-13",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-14",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-15",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-16",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-17",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-18",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-19",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
+    },
+    {
+      name: "gallery-20",
+      format: "jpg",
+      width: 350,
+      height: 465,
+      altText: 'powerfull team',
     },
   ]
 
 mixin about()
-  section.about.page-section
-    .container
-      .page-section__header
+  section.about.page-section.page-section--decor(id="about", data-section)
+    .page-section__trigger(data-section-trigger)
+    .page-section__header
+      .container
         .page-section__title-wrapper
-          .page-section__title-bg.title-h1 About us
+          .page-section__title-bg.title-h1(data-title-bg) About us
           h2.page-section__title.title-h2 About us
-      .page-section__body
+    .page-section__body
+      .container
         .page-section__grid
-          .about__image-wrapper
-            +picture('content', 'ivan-powerfull', 'jpg', 580, 540, 'Ivan Powerfull')
+          .about__image-wrapper(data-sal="fade", data-sal-duration="600", data-sal-delay="100", data-image-lazy)
+            +picture-lazy('content', 'ivan-powerfull', 'jpg', 580, 540, 'Ivan Powerfull')
           .about__content
-            h3.about__title.title-h2 Greetings
+            h3.about__title.title-h2(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") Greetings
             .about__text-wrapper
-              p.text-big #[span.text-accent Welcome to Powerful Team], your premier online fitness family. We’re not just coaches; we’re your relentless allies on a shared journey towards excellence. With us, you gain more than fitness plans—you join a movement that nurtures your strength, passion, and persistence.
-              p.text-big Our team embodies expertise and enthusiasm, offering personalized online coaching powered by the latest in fitness science.
-              p.text-big We celebrate every victory together and tackle each challenge with the collective might of our community.
-              p.text-big Here, every workout is a step toward shared triumph. Join us and unlock your potential. Together, we don’t just aim for goals—we conquer them.
+              p.text-big(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") #[span.text-accent Welcome to Powerful Team], your premier online fitness family. We’re not just coaches; we’re your relentless allies on a shared journey towards excellence. With us, you gain more than fitness plans—you join a movement that nurtures your strength, passion, and persistence.
+              p.text-big(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") Our team embodies expertise and enthusiasm, offering personalized online coaching powered by the latest in fitness science.
+              p.text-big(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") We celebrate every victory together and tackle each challenge with the collective might of our community.
+              p.text-big(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") Here, every workout is a step toward shared triumph. Join us and unlock your potential. Together, we don’t just aim for goals—we conquer them.
         .about__gallery
-          .about__gallery-title.title-h2 Welcome to #[span.text-accent Powerful Team.] #[br] Welcome to stronger, together.
-          .gallery-slider.swiper(data-slider="gallery")
+          .about__gallery-title.title-h2(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") Welcome&nbsp;to #[span.text-accent Powerful&nbsp;Team.] #[br] Welcome&nbsp;to stronger,&nbsp;together.
+          .gallery-slider.swiper(data-slider="gallery", data-sal="slide-up", data-sal-duration="600", data-sal-delay="100")
             .gallery-slider.swiper-wrapper
               each slide in aboutGallery
-                .gallery-slider__item.swiper-slide
-                  +picture('content', slide.name, slide.format, slide.width, slide.height, slide.altText).gallery-slider__img
+                .gallery-slider__item.swiper-slide(data-image-lazy)
+                  +picture-lazy('content/about', slide.name, slide.format, slide.width, slide.height, slide.altText).gallery-slider__img
+    .decor-flash.decor-flash--about

@@ -1,0 +1,416 @@
+-
+  const goals = [
+    {
+      inputLabel: "Lose Weight",
+      inputName: "fitness-goal",
+      inputValue: "lose-weight",
+      inputId: "lose-weight",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Tone Muscle",
+      inputName: "fitness-goal",
+      inputValue: "tone-muscle",
+      inputId: "tone-muscle",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Build Strength & Muscle",
+      inputName: "fitness-goal",
+      inputValue: "build-strength-muscle",
+      inputId: "build-strength-muscle",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Train for an Event or Build Endurance",
+      inputName: "fitness-goal",
+      inputValue: "build-endurance",
+      inputId: "build-endurance",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Recover from an Injury",
+      inputName: "fitness-goal",
+      inputValue: "recover-injury",
+      inputId: "recover-injury",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Improve Nutrition",
+      inputName: "fitness-goal",
+      inputValue: "improve-nutrition",
+      inputId: "improve-nutrition",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Improve Overall Fitness",
+      inputName: "fitness-goal",
+      inputValue: "improve-overall-fitness",
+      inputId: "improve-overall-fitness",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Other",
+      inputLabelNote: "Will discuss with my coach",
+      inputName: "fitness-goal",
+      inputValue: "other",
+      inputId: "other-fitness-goal",
+      inputChecked: false,
+    },
+  ]
+
+-
+  const gender = [
+    {
+      inputLabel: "Female",
+      inputType: 'radio',
+      inputName: "gender",
+      inputValue: "female",
+      inputId: "female",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Male",
+      inputType: 'radio',
+      inputName: "gender",
+      inputValue: "male",
+      inputId: "male",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Prefer not to say",
+      inputType: 'radio',
+      inputName: "gender",
+      inputValue: "not-to-say",
+      inputId: "not-to-say",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Other",
+      inputType: 'radio',
+      inputName: "gender",
+      inputValue: "other",
+      inputId: "other-gender",
+      inputChecked: false,
+    },
+  ]
+
+-
+  const fitnessChalenge = [
+    {
+      inputLabel: "Staying motivated and accountable",
+      inputType: 'radio',
+      inputName: "fitness-challenge",
+      inputValue: "Staying motivated and accountable",
+      inputId: "fitness-challenge-1",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Lack of time",
+      inputType: 'radio',
+      inputName: "fitness-challenge",
+      inputValue: "Lack of time",
+      inputId: "fitness-challenge-2",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Getting started",
+      inputType: 'radio',
+      inputName: "fitness-challenge",
+      inputValue: "Getting started",
+      inputId: "fitness-challenge-3",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Taking my results to the next level",
+      inputType: 'radio',
+      inputName: "fitness-challenge",
+      inputValue: "Taking my results to the next level",
+      inputId: "fitness-challenge-4",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Other",
+      inputLabelNote: 'Will discuss with my coach',
+      inputType: 'radio',
+      inputName: "fitness-challenge",
+      inputValue: "Other",
+      inputId: "fitness-challenge-other",
+      inputChecked: false,
+    },
+  ]
+
+-
+  const sportDays = [
+    {
+      inputLabel: "0",
+      inputType: 'radio',
+      inputName: "sport-day-value",
+      inputValue: "0 day",
+      inputId: "sport-day-value-0",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "1",
+      inputType: 'radio',
+      inputName: "sport-day-value",
+      inputValue: "1 day",
+      inputId: "sport-day-value-1",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "2",
+      inputType: 'radio',
+      inputName: "sport-day-value",
+      inputValue: "2 days",
+      inputId: "sport-day-value-2",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "3",
+      inputType: 'radio',
+      inputName: "sport-day-value",
+      inputValue: "3 days",
+      inputId: "sport-day-value-3",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "4",
+      inputType: 'radio',
+      inputName: "sport-day-value",
+      inputValue: "4 days",
+      inputId: "sport-day-value-4",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "5",
+      inputType: 'radio',
+      inputName: "sport-day-value",
+      inputValue: "5 days",
+      inputId: "sport-day-value-5",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "6",
+      inputType: 'radio',
+      inputName: "sport-day-value",
+      inputValue: "6 days",
+      inputId: "sport-day-value-6",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "7",
+      inputType: 'radio',
+      inputName: "sport-day-value",
+      inputValue: "7 days",
+      inputId: "sport-day-value-7",
+      inputChecked: false,
+    },
+  ]
+
+-
+  const genderCoach = [
+    {
+      inputLabel: "Female",
+      inputType: 'radio',
+      inputName: "gender-coach",
+      inputValue: "female",
+      inputId: "female-coach",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Male",
+      inputType: 'radio',
+      inputName: "gender-coach",
+      inputValue: "male",
+      inputId: "male-coach",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "no Preference",
+      inputType: 'radio',
+      inputName: "gender-coach",
+      inputValue: "no Preference",
+      inputId: "no-preference-coach",
+      inputChecked: false,
+    },
+  ]
+
+-
+  const styleCoach = [
+    {
+      inputLabel: "The Drill Sergeant",
+      inputLabelNote: "I want someone who will push me and hold me accountable.",
+      inputType: 'radio',
+      inputName: "style-coach",
+      inputValue: "The Drill Sergeant",
+      inputId: "drill-sergeant-coach",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "The Partner",
+      inputLabelNote: "I want someone who will support and motivate me with positive reinforcement.",
+      inputType: 'radio',
+      inputName: "style-coach",
+      inputValue: "The Partner",
+      inputId: "partner-coach",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Mix of both",
+      inputLabelNote: "I want someone who will push me sometimes and support me others.",
+      inputType: 'radio',
+      inputName: "style-coach",
+      inputValue: "Mix of both",
+      inputId: "mix-style-coach",
+      inputChecked: false,
+    },
+  ]
+
+-
+  const nutrition = [
+    {
+      inputLabel: "Very Important",
+      inputLabelNote: "I want to make major improvements.",
+      inputType: 'radio',
+      inputName: "nutrition",
+      inputValue: "Very Important",
+      inputId: "very-important-nutrition",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Somewhat Important",
+      inputLabelNote: "I eat pretty well, but I’d like to improve where I can",
+      inputType: 'radio',
+      inputName: "nutrition",
+      inputValue: "Somewhat Important",
+      inputId: "somewhat-important-nutrition",
+      inputChecked: false,
+    },
+    {
+      inputLabel: "Not Important",
+      inputLabelNote: "I would rather focus on exercise.",
+      inputType: 'radio',
+      inputName: "nutrition",
+      inputValue: "Not Important",
+      inputId: "not-important-nutrition",
+      inputChecked: false,
+    },
+  ]
+mixin modal-main-form()
+  .main-form(data-main-form="parent", data-form-validate, data-callback="base")
+    form.main-form__form
+      .main-form__content
+        .main-form__header
+          h2.main-form__title.title-h3 Welcome to our quick survey!
+          .main-form__description.text Your input is valuable and it won’t take much of your time. Let’s achieve our fitness goals together!
+          .main-form__progress
+            .progress-form
+              .progress-form__bg
+                .progress-form__indicator(data-main-form-progress)
+        .main-form__body
+          .main-form-step(data-main-form-step).is-active
+              .main-form-step__title.text-big What are your fitness goals?
+              p.main-form-step__description.text We’ll recommend your perfect coach based on your goals, fitness level, unique circumstances, and motivation style.
+              .main-form-step__content
+                .main-form-step__message.text Select all that apply
+                .main-form-step__checkbox-list
+                  each checkbox in goals
+                    +custom-toggle(checkbox).custom-toggle--checkbox.text
+          .main-form-step(data-main-form-step)
+              .main-form-step__title.text-big What is your current age?
+              .main-form-step__content
+                .main-form-step__message.text Value must not be empty
+                .main-form-step__input-grid
+                  +custom-input({
+                      inputType: "text",
+                      inputLabel: "Enter your age",
+                      inputName: "user-age",
+                      inputId: "user-age",
+                      inputPlaceholder: "33",
+                      inputMinLength: 2,
+                      inputMaxLength: 2,
+                    }).custom-input--vertical(data-validate-type="text", data-limitation="digit")
+          .main-form-step(data-main-form-step)
+              .main-form-step__title.text-big How would you describe your gender?
+              .main-form-step__content
+                .main-form-step__message.text Value must not be empty
+                .main-form-step__checkbox-list
+                  each radio in gender
+                    +custom-toggle(radio).custom-toggle--radio.text
+          .main-form-step(data-main-form-step)
+              .main-form-step__title.text-big What is your biggest fitness challenge?
+              .main-form-step__content
+                .main-form-step__message.text Value must not be empty
+                .main-form-step__checkbox-list
+                  each radio in fitnessChalenge
+                    +custom-toggle(radio).custom-toggle--radio.text
+          .main-form-step(data-main-form-step)
+              .main-form-step__title.text-big How many days do you currently exercise each week?
+              .main-form-step__content
+                .main-form-step__message.text Value must not be empty
+                .main-form-step__checkbox-list
+                  each radio in sportDays
+                    +custom-toggle(radio).custom-toggle--radio.text
+          .main-form-step(data-main-form-step)
+              .main-form-step__title.text-big Do you prefer a male or female coach?
+              .main-form-step__content
+                .main-form-step__message.text Value must not be empty
+                .main-form-step__checkbox-list
+                  each radio in genderCoach
+                    +custom-toggle(radio).custom-toggle--radio.text
+          .main-form-step(data-main-form-step)
+              .main-form-step__title.text-big What style coach do you feel is best for you?
+              p.main-form-step__description.text Your coach will text you daily to provide guidance, so it’s important that your coach’s style is a fit for you.
+              .main-form-step__content
+                .main-form-step__message.text Value must not be empty
+                .main-form-step__checkbox-list
+                  each radio in styleCoach
+                    +custom-toggle(radio).custom-toggle--radio.text
+          .main-form-step(data-main-form-step)
+              .main-form-step__title.text-big How important is nutrition coaching to you?
+              p.main-form-step__description.text All of our coaches provide nutrition guidance. Many also have advanced nutrition credentials in addition to fitness credentials.
+              .main-form-step__content
+                .main-form-step__message.text Value must not be empty
+                .main-form-step__checkbox-list
+                  each radio in nutrition
+                    +custom-toggle(radio).custom-toggle--radio.text
+          .main-form-step(data-main-form-step)
+            .main-form-step__title.text-big Your contacts
+            p.main-form-step__description.text We’ll contact you to arrange an onboarding call. We’ll discuss your training background, injuries, goals, and craft a personalized workout plan.
+            .main-form-step__input-grid
+              +custom-input({
+                    inputType: "text",
+                    inputLabel: "First Name",
+                    inputName: "user-name",
+                    inputId: "user-name",
+                    inputPlaceholder: "John",
+                  }).custom-input--vertical(data-required, data-validate-type="text" data-limitation="letters")
+              +custom-input({
+                    inputType: "text",
+                    inputLabel: "Last Name",
+                    inputName: "user-last-name",
+                    inputId: "user-last-name",
+                    inputPlaceholder: " Smith",
+                  }).custom-input--vertical(data-required, data-validate-type="text" data-limitation="letters")
+              +custom-input({
+                    inputType: "email",
+                    inputLabel: "Email",
+                    inputName: "user-email",
+                    inputId: "user-email",
+                    inputPlaceholder: "useremail@gmail.com",
+                  }).custom-input--vertical(data-required, data-validate-type="email")
+              +custom-input({
+                    inputType: "tel",
+                    inputLabel: "Phone Number",
+                    inputName: "user-phone",
+                    inputId: "user-phone",
+                    inputPlaceholder: "+1 (941) 932-5598",
+                  }).custom-input--vertical(data-required, data-validate-type="phone")
+          .main-form__status
+            .main-form__error.text(data-main-form="error") Произошла ошибка! Попробуйте ещё раз
+      .main-form__buttons-group-wrapper
+        .main-form__buttons-group
+            +button({text: "Back"})(data-main-form="step-prev").button.button--outline.button--dark.button.main-form__button-prev.is-shrink
+            +button({text: "Continue"})(data-main-form="step-next").button
+            +button({text: "Find you Coach", type: "submit"})(data-main-form="submit").button.main-form__button-submit.is-hidden

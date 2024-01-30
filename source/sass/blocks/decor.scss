@@ -1,0 +1,33 @@
+.decor-flash {
+  position: absolute;
+  width: size(300px);
+  height: size(300px);
+
+  border-radius: 50%;
+  background-color: $color-vermilion;
+  filter: blur(size(300px));
+
+  &--about {
+    top: 50%;
+    right: 20%;
+  }
+
+  &--expertise {
+    top: 30%;
+    left: 50%;
+
+    transform: translateX(-50%);
+    filter: blur(size(250px));
+  }
+
+  &--services {
+    top: auto;
+    right: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+}

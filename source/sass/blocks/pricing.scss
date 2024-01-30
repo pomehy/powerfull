@@ -1,0 +1,144 @@
+.pricing {
+  position: relative;
+  padding-bottom: size(120px);
+
+  @include vp-1023 {
+    padding-bottom: size-t(120px);
+  }
+
+  .page-section__header {
+    @include vp-1023 {
+      margin-bottom: size-t(40px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(40px);
+    }
+  }
+
+
+  &__header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: size(60px);
+
+    @include vp-1023 {
+      margin-bottom: size-t(60px);
+    }
+
+    @include vp-767 {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: size-m(60px);
+    }
+  }
+
+  &__controls {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: size(16px);
+    margin-left: size(40px);
+
+    @include vp-1023 {
+      gap: size-t(10px);
+      margin-left: size-t(40px);
+    }
+
+    @include vp-767 {
+      gap: size-m(10px);
+      margin-left: 0;
+      width: 100%;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .button {
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      padding-top: size(4px);
+      padding-bottom: size(4px);
+
+      @include vp-1023 {
+        padding-top: size-t(6px);
+        padding-bottom: size-t(6px);
+      }
+
+      @include vp-767 {
+        margin-top: size-m(20px);
+        padding-top: size-m(12px);
+        padding-bottom: size-m(12px);
+      }
+    }
+
+    .pricing__sale {
+      font-size: size(12px);
+
+      @include vp-1023 {
+        font-size: size-t(12px);
+      }
+
+      @include vp-767 {
+        font-size: size-m(12px);
+      }
+    }
+  }
+
+  &__plan-note {
+    position: absolute;
+    left: 0;
+    bottom: size(-20px);
+    opacity: 0.7;
+  }
+
+  &__body {
+    display: flex;
+
+    .price {
+      margin-right: size(200px);
+
+      @include vp-1023 {
+        margin-right: size-t(85px);
+      }
+
+      @include vp-767 {
+        margin-right: 0;
+        margin-bottom: size-m(32px);
+      }
+    }
+
+    @include vp-1023 {
+      flex-direction: column;
+    }
+  }
+
+  &__image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      filter: grayscale(100%);
+    }
+  }
+}

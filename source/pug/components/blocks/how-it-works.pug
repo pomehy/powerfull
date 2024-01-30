@@ -1,0 +1,110 @@
+-
+  const howItWorksItems = [
+    {
+      title: "Get matched with the right coach",
+      subtitle: 'Your perfect coach',
+      text: "What works for everyone is different. You need someone you click with.",
+      list: [
+        'Get paired with a coach with the best style & specialties for you',
+        'Start with a consultation so you know it’s a fit',
+        'Pick a coach: male or female',
+      ],
+      img: {
+        path: 'content/how-it-works',
+        image: 'how-it-works-1',
+        format: 'jpg',
+        width: 247,
+        height: 540,
+        altText: 'Your perfect coach',
+      },
+    },
+    {
+      title: "Do workouts designed just for you",
+      subtitle: 'CUSTOM WORKOUTS',
+      text: "Because the best workouts are the ones you’ll actually do. We build workouts to fit:",
+      list: [
+        'Your goals',
+        'Your body & injuries',
+        'Your schedule & favorite activities',
+      ],
+      img: {
+        path: 'content/how-it-works',
+        image: 'how-it-works-2',
+        format: 'jpg',
+        width: 247,
+        height: 540,
+        altText: 'CUSTOM WORKOUTS',
+      },
+    },
+    {
+      title: "Improve your nutrition with expert guidance",
+      subtitle: 'PERSONALIZED NUTRITION',
+      text: "Sustainable improvements to nutrition drive life-changing benefits, your coach will:",
+      list: [
+        'Start with diagnostics to understand what’s working and what can be improved',
+        'Provide ongoing feedback and resources to get 1% better every day',
+        'Help you adopt easy swaps, recipes, and habits',
+      ],
+      img: {
+        path: 'content/how-it-works',
+        image: 'how-it-works-3',
+        format: 'jpg',
+        width: 247,
+        height: 540,
+        altText: 'PERSONALIZED NUTRITION',
+      },
+    },
+    {
+      title: "Stay motivated with daily support and optional live video sessions",
+      subtitle: 'ACCOUNTABILITY',
+      text: "Because life happens. When it does, your coach has your back.",
+      list: [
+        'Get daily guidance via text message',
+        'Receive feedback about your form with photos and videosy',
+        'Rate your workouts and develop habits that lead to long-term success',
+      ],
+    },
+  ]
+
+mixin how-it-works()
+  section.how-it-works.page-section(id="how-it-works", data-section)
+    .page-section__trigger(data-section-trigger)
+    .page-section__header
+      .container
+        .page-section__title-wrapper
+          .page-section__title-bg.title-h1(data-title-bg) How it works
+          h2.page-section__title.title-h2(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200") How it works
+
+    .page-section__body
+      .container
+        .how-it-works__grid
+          .how-it-works__image-wrapper
+            .how-it-works__phone(data-phone="parent")
+              +picture('content', 'iphone-12-pro-max', 'png', 276, 560, 'iPhone 12 Pro Max').how-it-works__phone-img
+              +icon("logo", 200, 57).logo
+              .how-it-works__phone-container
+                .how-it-works__image(data-phone="image", data-index="1", data-image-lazy)
+                  +picture-lazy('content/how-it-works', 'how-it-works-1', 'jpg', 276, 560, 'Your perfect coach')
+                .how-it-works__image(data-phone="image", data-index="2", data-image-lazy)
+                  +picture-lazy('content/how-it-works', 'how-it-works-2', 'jpg', 276, 560, 'CUSTOM WORKOUTS')
+                .how-it-works__image(data-phone="image", data-index="3", data-image-lazy)
+                  +picture-lazy('content/how-it-works', 'how-it-works-3', 'jpg', 276, 560, 'PERSONALIZED NUTRITION')
+                .how-it-works__image(data-phone="image", data-index="4", data-image-lazy)
+                  +picture-lazy('content/how-it-works', 'how-it-works-4', 'png', 276, 560, 'ACCOUNTABILITY')
+                  +picture-lazy('content/how-it-works', 'how-it-works-4-mob', 'jpg', 276, 560, 'ACCOUNTABILITY').is-mobile
+          .how-it-works__list(data-how-it-work="list")
+            each item, index in howItWorksItems
+              article.content-item(data-how-it-work="item")
+                .content-item__number 0!{index+1}
+                .content-item__subtitle.text-big.text-uppercase.text-accent !{item.subtitle}
+                h3.content-item__title.title-h3 !{item.title}
+                p.content-item__description.text-md !{item.text}
+                ul.content-item__list
+                  each listItem in item.list
+                    li.text
+                      span !{listItem}
+                      +icon('icon-marker', 22, 22).icon-marker
+                .content-item__footer
+                  +button({text: "Get started"})(data-open-modal="main-form")
+                  //- +button({text: "Know more"})(data-open-modal="know-more").button--outline
+

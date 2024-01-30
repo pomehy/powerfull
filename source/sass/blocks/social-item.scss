@@ -1,0 +1,55 @@
+.social-item {
+  transition: opacity $trans-default;
+
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: size(44px);
+    height: size(44px);
+    color: $color-default-white;
+    background-color: $color-default-white-10;
+    border-radius: size(6px);
+
+    transition: color $trans-default, background $trans-default;
+
+    @include vp-1023 {
+      width: size-t(44px);
+      height: size-t(44px);
+      border-radius: size-t(6px);
+    }
+
+    @include vp-767 {
+      width: size-m(44px);
+      height: size-m(44px);
+      border-radius: size-m(6px);
+    }
+  }
+
+  &__icon {
+    width: size(20px);
+    height: size(20px);
+
+    @include vp-1023 {
+      width: size-t(20px);
+      height: size-t(20px);
+    }
+
+    @include vp-767 {
+      width: size-m(20px);
+      height: size-m(20px);
+    }
+  }
+
+  @include hover-focus {
+    .social-item__icon-wrapper {
+      color: $color-vermilion;
+      background-color: $color-default-white;
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}

@@ -8,8 +8,20 @@
   @return calc($size-in-px / $fz-default * 1rem);
 }
 
+@function size-t($size-in-px) {
+  @return calc($size-in-px / $fz-default-t * 1rem);
+}
+
+@function size-m($size-in-px) {
+  @return calc($size-in-px / $fz-default-m * 1rem);
+}
+
 @function size-desktop($size-in-px) {
   @return calc($size-in-px / $vp-1440 * 100vw);
+}
+
+@function size-tablet($size-in-px) {
+  @return calc($size-in-px / $vp-1024 * 100vw);
 }
 
 // reboot.scss

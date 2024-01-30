@@ -1,5 +1,5 @@
 .intro {
-  position: relative;
+  position: fixed;
   display: flex;
   justify-content: center;
   padding-top: size(160px);
@@ -9,6 +9,23 @@
 
   overflow: hidden;
 
+  @include vp-1023 {
+    padding-top: size-t(120px);
+  }
+
+  &__cover {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: $color-default-black;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    pointer-events: none;
+  }
 
   &::after {
     content: '';
@@ -18,6 +35,24 @@
     width: 100%;
     height: size(200px);
     background-image: $black-to-top;
+
+    @include vp-1023 {
+      height: size-t(200px);
+    }
+
+    @include vp-767 {
+      height: size-m(200px);
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    padding-bottom: size(160px);
+
+    @include vp-1023 {
+      padding-bottom: size-t(160px);
+    }
   }
 
   &__content {
@@ -29,11 +64,21 @@
   }
 
   &__title {
+    margin-top: 0;
     margin-bottom: size(30px);
     text-align: center;
+
+    @include vp-1023 {
+      margin-bottom: size-t(24px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(24px);
+    }
   }
 
   &__description {
+    text-align: center;
     opacity: 0.7;
   }
 
@@ -41,10 +86,36 @@
     position: absolute;
     z-index: 1;
     bottom: size(40px);
+
+    @include vp-1023 {
+      bottom: size-t(40px);
+    }
+
+    @include vp-767 {
+      bottom: size-m(40px);
+    }
   }
 
   &__button {
+    align-items: center;
+    justify-content: center;
+
+    height: size(56px);
+    width: size(280px);
+
     margin-top: size(40px);
+
+    @include vp-1023 {
+      height: size-t(56px);
+      width: size-t(280px);
+      margin-top: size-t(40px);
+    }
+
+    @include vp-767 {
+      height: size-m(56px);
+      width: size-m(280px);
+      margin-top: size-m(40px);
+    }
   }
 
   &__video-bg-wrapper {
@@ -72,6 +143,6 @@
     height: 100%;
     object-fit: cover;
 
-    transform: scale(1.4);
+    pointer-events: none;
   }
 }

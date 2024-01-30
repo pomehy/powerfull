@@ -1,0 +1,51 @@
+.page-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* stylelint-disable-next-line */
+  min-height: calc(100 * var(--vh, 1vh));
+
+  &__logo {
+    position: absolute;
+    top: size(40px);
+    z-index: 1;
+
+    @include vp-1023 {
+      top: size-t(40px);
+    }
+
+    @include vp-767 {
+      top: size-m(40px);
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__image-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+  }
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+}

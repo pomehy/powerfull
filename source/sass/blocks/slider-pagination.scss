@@ -1,0 +1,41 @@
+.slider-pagination {
+  &.swiper-pagination {
+    bottom: size(-60px);
+
+    @include vp-1023 {
+      bottom: size-t(-44px);
+    }
+
+    @include vp-767 {
+      bottom: size-m(-44px);
+    }
+  }
+
+  .swiper-pagination-bullet {
+    margin: 0 size(4px);
+    width: size(14px);
+    height: size(14px);
+    border-radius: 50%;
+
+    background-color: $color-vermilion;
+    transform: scale(0.7);
+    transition: transform $trans-default, opacity $trans-default;
+
+    &.is-active {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    @include vp-1023 {
+      margin: 0 size-t(4px);
+      width: size-t(12px);
+      height: size-t(12px);
+    }
+
+    @include vp-767 {
+      margin: 0 size-m(4px);
+      width: size-m(12px);
+      height: size-m(12px);
+    }
+  }
+}

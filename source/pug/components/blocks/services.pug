@@ -1,0 +1,131 @@
+-
+  const serviceItems = [
+    {
+      title: "Private personal training",
+      text: "Experience tailored fitness guidance with our Private Personal Training. Our service trainers provide personalized workout plans, ensuring effective, safe, and enjoyable sessions to help you meet your fitness goals",
+      img: {
+        path: 'content/service',
+        image: 'service-1',
+        format: 'jpg',
+        width: 500,
+        height: 350,
+        altText: 'Private personal training',
+      },
+    },
+    {
+      title: "Online coaching",
+      text: "Our Online Coaching brings professional fitness training to your home. Get custom workout plans, real-time feedback, and continuous support from our certified trainers, all through our convenient online platform",
+      img: {
+        path: 'content/service',
+        image: 'service-2',
+        format: 'jpg',
+        width: 500,
+        height: 350,
+        altText: 'Online coaching',
+      },
+    },
+    {
+      title: "Strength training",
+      text: "Build strength and endurance with our specialized Strength Training programs. Designed for all levels, these sessions focus on muscle development, core stability, and overall power enhancement",
+      img: {
+        path: 'content/service',
+        image: 'service-3',
+        format: 'jpg',
+        width: 500,
+        height: 350,
+        altText: 'Strength training',
+      },
+    },
+    {
+      title: "Weight loss",
+      text: "Embark on a transformative journey with our Weight Loss services. We combine exercise, nutrition advice, and lifestyle changes to help you achieve a healthier body composition and a more confident self",
+      img: {
+        path: 'content/service',
+        image: 'service-4',
+        format: 'jpg',
+        width: 500,
+        height: 350,
+        altText: 'Weight loss',
+      },
+    },
+    {
+      title: "Powerlifting coaching",
+      text: "Elevate your lifting with our Powerlifting Coaching. Gain expertise in squat, bench press, and deadlift while improving technique, strength, and competition performance under the guidance of our seasoned coaches",
+      img: {
+        path: 'content/service',
+        image: 'service-5',
+        format: 'jpg',
+        width: 500,
+        height: 350,
+        altText: 'Powerlifting coaching',
+      },
+    },
+    {
+      title: "Improve mobility and flexibility",
+      text: "Enhance your movement quality with our Mobility and Flexibility training. Our exercises focus on increasing range of motion, reducing injury risk, and improving overall functional fitness",
+      img: {
+        path: 'content/service',
+        image: 'service-6',
+        format: 'jpg',
+        width: 500,
+        height: 350,
+        altText: 'Improve mobility and flexibility',
+      },
+    },
+    {
+      title: "Functional Training",
+      text: "Our Functional Training program is designed to prepare your body for daily activities. Improve balance, agility, and strength through practical exercises that mimic everyday movements",
+      img: {
+        path: 'content/service',
+        image: 'service-7',
+        format: 'jpg',
+        width: 500,
+        height: 350,
+        altText: 'Functional Training',
+      },
+    },
+    {
+      title: "Nutrition and meal plans",
+      text: "Fuel your fitness journey with our Nutrition and Meal Plans. Tailored to your personal goals and dietary preferences, our plans ensure you receive the right balance of nutrients to support your training and lifestyle",
+      img: {
+        path: 'content/service',
+        image: 'service-8',
+        format: 'jpg',
+        width: 500,
+        height: 350,
+        altText: 'Nutrition and meal plans',
+      },
+    },
+  ]
+mixin services()
+  section.services.page-section.page-section--decor(id="services", data-section)
+    .page-section__trigger(data-section-trigger)
+    .services__inner
+      .page-section__header
+        .container
+          .page-section__title-wrapper
+            .page-section__title-bg.page-section__title-bg--reverse.title-h1(data-title-bg="services") Services offered
+            h2.page-section__title.title-h2(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") Services offered
+          .services__content
+            .services__content-inner
+              p.page-section__description.text(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") We are more than just a fitness coaching service; we are your partners in transforming your health and fitness journey. Our range of bespoke services caters to various fitness goals and needs, ensuring a personalized experience for each of our clients
+              //- a.services__link.text-link(href="#", data-open-modal="know-more") know more
+      .page-section__body
+        .container
+          .page-section__grid.swiper(data-slider="services")
+            .services__list.swiper-wrapper
+              .decor-flash.decor-flash--services
+              each card in serviceItems
+                article.card.card--sticky.swiper-slide
+                  .card__image-wrapper(data-image-lazy)
+                    +picture-lazy(card.img.path, card.img.image, card.img.format, card.img.width, card.img.height, card.img.altText)
+                  .card__content.card__content--mini
+                    h3.card__title.title-h3 !{card.title}
+                    p.card__description.text !{card.text}
+              a.card.card--link.card--sticky.swiper-slide(href="#", data-open-modal="main-form")
+                .card__content.card__content--mini
+                  h3.card__title.title-h3.text-uppercase GET STARTED NOW
+                  p.card__description.text Ready to take the first step towards a healthier, fitter you? Powerful-Team, we believe in empowering you right from the start. That’s why we’re offering an exclusive 2-week free online fitness coaching program to kickstart your journey.
+                  .card__note Start 14-days free trial
+                +icon('icon-biceps', 169, 205).card__biceps
+

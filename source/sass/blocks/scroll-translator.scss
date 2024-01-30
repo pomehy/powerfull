@@ -1,0 +1,16 @@
+.scroll-translator {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &__indicator {
+    width: 100%;
+    height: size(2px);
+    background-image: $vermilion-to-scarlet;
+    opacity: 0.5;
+    transform: scale(0);
+    transform-origin: bottom left;
+  }
+}

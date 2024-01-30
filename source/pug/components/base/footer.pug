@@ -1,3 +1,55 @@
+-
+  const footerLinks = [
+    {
+      href: "index.html#about",
+      text: "About us"
+    },
+    {
+      href: "index.html#services",
+      text: "Services"
+    },
+    {
+      href: "index.html#how-it-works",
+      text: "How it Works"
+    },
+    {
+      href: "index.html#pricing",
+      text: "Pricing"
+    },
+    {
+      href: "index.html#reviews",
+      text: "Reviews"
+    },
+    {
+      href: "index.html#contacts",
+      text: "Contact us"
+    },
+  ]
+
 mixin footer(footerMods)
-  footer.page-footer(class=footerMods)
+  footer.page-footer(class=footerMods, data-footer)
+    +contacts()
+    .page-footer__image-bg(data-image-lazy)
+      +picture-lazy('content', 'footer-bg', 'jpg', 1440, 1500, 'running')
     .container
+      .page-footer__grid
+        .page-footer__logo-wrapper
+          +icon("logo", 200, 57).logo(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200")
+          .page-footer__logo-text.text(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200") Welcome to Powerful Team. #[br]Welcome to stronger, together.
+        .page-footer__navigation
+          nav.footer-nav
+            .footer-nav__wrapper
+              ul.footer-nav__list
+                each link, index in footerLinks
+                  - const activeState = currentUrl === link.href
+                  li.footer-nav__item(data-sal="slide-up", data-sal-duration="600", data-sal-delay=index*50)
+                    if(activeState)
+                      span.footer-nav__link.text.is-active= link.text
+                    else
+                      a.footer-nav__link.text(href=link.href, data-move-to)= link.text
+        .page-footer__contacts(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200")
+          a(href="tel:+19419325598",  target="_blank", rel="nofollow noopener noreferrer").page-footer__contacts-link.text-md +1 (941) 932-5598
+          a(href="mailto:info@powerful-team.com",  target="_blank", rel="nofollow noopener noreferrer").page-footer__contacts-link.text-md info@powerful-team.com
+          //- a(href="https://maps.app.goo.gl/DscuGCC6QFXRsqmf6",  target="_blank", rel="nofollow noopener noreferrer").page-footer__contacts-link.text-md 2355 Midnight Pearl Dr, Sarasota, FL 34240
+      .page-footer__bottom(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200")
+        .page-footer__copyright.text © 2023 - Powerfull team

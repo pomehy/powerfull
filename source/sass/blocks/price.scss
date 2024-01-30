@@ -1,0 +1,98 @@
+.price {
+  &__value-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include vp-1023 {
+      width: size-t(200px);
+    }
+
+    @include vp-767 {
+      width: 100%;
+    }
+  }
+
+  &__note {
+    position: absolute;
+
+    font-size: size(28px);
+    top: size(-10px);
+    opacity: 0.5;
+
+    @include vp-1023 {
+      font-size: size-t(20px);
+      top: size-t(-12px);
+    }
+
+    @include vp-767 {
+      top: size-m(-16px);
+      font-size: size-m(32px);
+    }
+  }
+
+  &__value {
+    display: inline-flex;
+    align-items: center;
+    width: size(250px);
+    font-weight: 900;
+    font-size: size(180px);
+    line-height: 110%;
+
+    span {
+      font-size: size(220px);
+    }
+
+    @include vp-1023 {
+      width: auto;
+      font-size: size-t(140px);
+
+      span {
+        font-size: size-t(185px);
+      }
+    }
+
+    @include vp-767 {
+      width: size-m(242px);
+      font-size: size-m(180px);
+
+      span {
+        font-size: size-m(220px);
+      }
+    }
+  }
+
+  &__currency {
+    position: absolute;
+    font-weight: 400;
+    font-size: size(48px);
+    opacity: 0.5;
+
+    @include vp-1023 {
+      font-size: size-t(32px);
+    }
+
+    @include vp-767 {
+      font-size: size-m(32px);
+    }
+  }
+
+  &__duration {
+    // position: absolute;
+    // bottom: size(18px);
+    font-weight: 400;
+    font-size: size(28px);
+    opacity: 0.5;
+    text-align: end;
+
+    @include vp-1023 {
+      bottom: size-t(18px);
+      font-size: size-t(20px);
+    }
+
+    @include vp-767 {
+      font-size: size-m(32px);
+    }
+  }
+}

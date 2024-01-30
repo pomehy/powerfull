@@ -1,0 +1,189 @@
+.main-form {
+  position: relative;
+
+  margin: 0 auto;
+  height: 100%;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: size(560px);
+    height: 100%;
+    flex-grow: 1;
+    padding-top: size(40px);
+    padding-bottom: size(100px);
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include vp-1023 {
+      width: size-t(560px);
+      padding-top: size-t(32px);
+      padding-bottom: size-t(100px);
+    }
+
+    @include vp-767 {
+      width: 100%;
+      padding-top: size-m(40px);
+      padding-right: size-m(16px);
+      padding-left: size-m(16px);
+      padding-bottom: size-m(100px);
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: size(20px);
+
+    @include vp-1023 {
+      margin-bottom: size-t(20px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(20px);
+    }
+  }
+
+  &__body {
+    height: 100%;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: size(16px);
+
+    @include vp-1023 {
+      margin-bottom: size-t(16px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(16px);
+    }
+  }
+
+  &__buttons-group-wrapper {
+    position: sticky;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+
+    padding: size(20px);
+    background-color: $color-default-white;
+
+    box-shadow: 0 size(-4px) size(100px) 0 rgba(34, 60, 80, 0.2);
+
+    @include vp-1023 {
+      padding: size-t(20px);
+      box-shadow: 0 size-t(-4px) size-t(100px) 0 rgba(34, 60, 80, 0.2);
+    }
+
+    @include vp-767 {
+      padding: size-m(20px);
+    }
+
+    button.is-hidden {
+      display: none;
+    }
+  }
+
+  &__buttons-group {
+    display: flex;
+    width: size(560px);
+
+    @include vp-1023 {
+      width: size-t(560px);
+    }
+
+    @include vp-767 {
+      width: 100%;
+    }
+
+    &.is-gap {
+      gap: size(16px);
+
+      @include vp-1023 {
+        gap: size-t(16px);
+      }
+
+      @include vp-767 {
+        gap: size-m(16px);
+      }
+    }
+
+    .button {
+      width: 100%;
+      flex-shrink: 1;
+      justify-content: center;
+      text-align: center;
+
+      transition: all $trans-default;
+    }
+
+    button.is-short {
+      width: 35%;
+    }
+  }
+
+  &__button-submit {
+    flex-grow: 1;
+    width: 60%;
+  }
+
+  &__button-prev.is-shrink {
+    width: 0%;
+    min-width: 0;
+    visibility: hidden;
+    opacity: 0;
+
+    transition: all 0.2s ease;
+  }
+
+  &__button-prev {
+    visibility: visible;
+    padding-right: 0;
+    padding-left: 0;
+    min-width: size(120px);
+
+    @include vp-1023 {
+      min-width: size-t(120px);
+    }
+
+    @include vp-767 {
+      min-width: size-m(80px);
+    }
+  }
+
+  &__error {
+    display: none;
+    padding-top: size(40px);
+    color: #ff1553;
+
+    @include vp-1023 {
+      padding-top: size-t(40px);
+    }
+
+    @include vp-767 {
+      padding-top: size-m(40px);
+    }
+
+    &.is-show {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,96 @@
+.expertise-footer-text {
+  overflow: hidden;
+
+  padding-top: 0;
+  position: sticky;
+  top: size(-250px);
+
+  @include vp-1023 {
+    top: size-t(-200px);
+  }
+
+  @include vp-767 {
+    top: size-m(-50px);
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100rem;
+    padding-top: size(50px);
+    padding-bottom: size(250px);
+    text-align: center;
+
+    @include vp-1023 {
+      height: size-t(1000px);
+      padding-top: size-t(150px);
+      padding-bottom: size-t(250px);
+    }
+
+    @include vp-767 {
+      height: size-m(700px);
+    }
+  }
+
+  &__top {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    transform: translateX(-100%);
+
+    text-shadow: size(4px) size(4px) 0 $color-main-black;
+
+    @include vp-1023 {
+      font-size: size-t(32px);
+      text-shadow: size-t(4px) size-t(4px) 0 $color-main-black;
+    }
+
+    @include vp-767 {
+      font-size: size-m(32px);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0%;
+      left: 0;
+      width: 100%;
+      height: 220%;
+      background-color: $color-vermilion;
+
+      transform: scaleX(0);
+      transform-origin: bottom left;
+
+      transition: transform 1s ease-in-out;
+    }
+  }
+
+  &__top.is-show {
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+
+  &__bot {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    transform: translateX(100%);
+
+    text-shadow: size(4px) size(4px) 0 $color-main-black;
+
+    @include vp-1023 {
+      font-size: size-t(32px);
+      text-shadow: size-t(4px) size-t(4px) 0 $color-main-black;
+    }
+
+    @include vp-767 {
+      font-size: size-m(32px);
+    }
+  }
+}

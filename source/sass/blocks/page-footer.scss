@@ -1,3 +1,149 @@
-.footer {
-  // padding: 40px 0;
+.page-footer {
+  position: relative;
+  z-index: 1;
+  background-color: $color-main-black;
+  overflow: hidden;
+
+  .logo {
+    @include vp-1023 {
+      width: size-t(150px);
+      height: size-t(40px);
+    }
+
+    @include vp-767 {
+      width: size-m(340px);
+      height: size-m(82px);
+    }
+  }
+
+  &__image-bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color-default-black;
+      opacity: 0.7;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: size(320px) 1fr size(280px);
+    gap: size(160px);
+
+    @include vp-1023 {
+      grid-template-columns: size-t(180px) 1fr size-t(200px);
+      gap: size-t(40px);
+    }
+
+    @include vp-767 {
+      display: flex;
+      flex-direction: column;
+      gap: size-m(40px);
+    }
+  }
+
+  &__navigation {
+    @include vp-767 {
+      margin-top: size-m(20px);
+    }
+  }
+
+  &__logo-text {
+    margin-top: size(20px);
+    line-height: 120%;
+
+    @include vp-1023 {
+      margin-top: size-t(20px);
+      font-size: size-t(12px);
+    }
+
+    @include vp-767 {
+      margin-top: size-m(20px);
+      font-size: size-m(16px);
+      text-align: center;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: size(20px);
+
+    @include vp-1023 {
+      gap: size-t(16px);
+    }
+
+    @include vp-767 {
+      margin-top: size-m(20px);
+      gap: size-m(16px);
+    }
+  }
+
+
+  &__contacts-link {
+    display: block;
+    color: $color-default-white-70;
+
+    transition: color $trans-default;
+
+    @include vp-1023 {
+      font-size: size-t(14px);
+    }
+
+    @include vp-767 {
+      font-size: size-m(20px);
+      text-align: center;
+    }
+    @include hover-focus {
+      color: $color-default-white;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: size(60px);
+    padding: size(32px) 0;
+
+    @include vp-1023 {
+      margin-top: size-t(32px);
+      padding: size-t(24px) 0;
+    }
+
+    @include vp-767 {
+      justify-content: center;
+      margin-top: size-m(20px);
+      padding: size-m(16px) 0;
+    }
+  }
+
+  &__copyright {
+    @include vp-1023 {
+      font-size: size-t(12px);
+    }
+
+    @include vp-767 {
+      font-size: size-m(12px);
+    }
+  }
 }

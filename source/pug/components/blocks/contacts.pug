@@ -1,0 +1,37 @@
+mixin contacts()
+  section.contacts.page-section(id="contacts", data-section)
+    .page-section__trigger(data-section-trigger)
+    .page-section__header
+      .container
+        .page-section__title-wrapper
+          .page-section__title-bg.page-section__title-bg--reverse.title-h1(data-title-bg) Contacts us
+          h2.page-section__title.title-h2(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200") Contacts us
+        p.page-section__description.text(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200") We’re here to help! If you have any questions, need assistance, or just want to share your thoughts, we’d love to hear from you. Reach out to us anytime through the following:
+    .page-section__body
+      .container
+        .contacts__content
+          ul.contacts__list
+            li.contact-item(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200")
+              a(href="mailto:info@powerful-team.com",  target="_blank", rel="nofollow noopener noreferrer").contact-item__link
+                .contact-item__icon-wrapper
+                  +icon('icon-evenlope', 32, 32).contact-item__icon
+                .contact-item__content
+                  h3.contact-item__title.text Email us
+                  span.contact-item__value.text-big info@powerful-team.com
+            li.contact-item(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200")
+              a(href="tel:+19419325598",  target="_blank", rel="nofollow noopener noreferrer").contact-item__link
+                .contact-item__icon-wrapper
+                  +icon('icon-phone', 32, 32).contact-item__icon
+                .contact-item__content
+                  h3.contact-item__title.text Call
+                  span.contact-item__value.text-big +1 (941) 932-5598
+          .socials(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200")
+            .socials__title.text Connect with us:
+            .socials__list
+              a.social-item(href="https://instagram.com/ivan.the.coach", aria-label="instagram", target="_blank", rel="nofollow noopener noreferrer")
+                .social-item__icon-wrapper
+                  +icon('icon-instagram', 20, 20).social-item__icon
+              a.social-item(href="https://www.tiktok.com/@ivan.the.coach", aria-label="tik-tok", target="_blank", rel="nofollow noopener noreferrer")
+                .social-item__icon-wrapper
+                  +icon('icon-tik-tok', 20, 20).social-item__icon
+

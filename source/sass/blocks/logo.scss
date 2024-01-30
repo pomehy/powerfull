@@ -1,5 +1,21 @@
 .logo {
-  width: size(200px);
-  height: size(56px);
-  color: $color-default-white;
+  img {
+    width: size(200px);
+    height: size(56px);
+  }
+
+
+  @include vp-1023 {
+    img {
+      width: size-t(180px);
+      height: size-t(51px);
+    }
+  }
+
+  @include vp-767 {
+    img {
+      width: size-m(168px);
+      height: size-m(48px);
+    }
+  }
 }

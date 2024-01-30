@@ -1,25 +1,6 @@
 .custom-toggle {
   position: relative;
-  font-size: 18px;
-  line-height: 27px;
-  font-weight: 300;
-
   display: flex;
-  width: 500px;
-  padding: 14px 0 10px 36px;
-
-  @media screen and (max-width: 767px) {
-    padding: 14px 0 10px 0;
-    width: 100%;
-  }
-
-  &:last-of-type {
-    padding: 14px 0 58px 36px;
-
-    @media screen and (max-width: 767px) {
-      padding: 14px 0 58px 0;
-    }
-  }
 
   input {
     position: absolute;
@@ -33,27 +14,96 @@
 
   label {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding-top: size(12px);
+    padding-bottom: size(12px);
+    padding-right: size(16px);
+    padding-left: size(52px);
 
-    padding-left: 52px;
-
+    background-color: $color-default-black-3;
+    border-radius: 2px;
     cursor: pointer;
+
+    transition: background $trans-default;
+
+    @include vp-1023 {
+      padding-top: size-t(12px);
+      padding-bottom: size-t(12px);
+      padding-right: size-t(16px);
+      padding-left: size-t(52px);
+      border-radius: size-t(2px);
+    }
+
+    @include vp-767 {
+      padding-top: size-m(12px);
+      padding-bottom: size-m(12px);
+      padding-right: size-m(16px);
+      padding-left: size-m(52px);
+      border-radius: size-m(2px);
+    }
 
     span {
       margin-bottom: 0;
       margin-left: 0;
+    }
+
+    @include hover-focus {
+      background-color: $color-default-black-10;
+    }
+  }
+
+  &__label-note {
+    display: block;
+    margin-top: size(4px);
+
+    font-size: size(12px);
+
+    @include vp-1023 {
+      margin-top: size-t(4px);
+      font-size: size-t(12px);
+    }
+
+    @include vp-767 {
+      margin-top: size-m(4px);
+      font-size: size-m(12px);
     }
   }
 
   &--checkbox {
     .custom-toggle__icon {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: size(12px);
+      left: size(16px);
 
-      width: 28px;
-      height: 28px;
+      width: size(20px);
+      height: size(20px);
 
-      border: 1.5px solid #2c39f2;
+      border: 1px solid $color-main-black;
+      border-radius: size(2px);
+      overflow: hidden;
+
+      @include vp-1023 {
+        top: size-t(12px);
+        left: size-t(16px);
+
+        width: size-t(20px);
+        height: size-t(20px);
+
+        border-radius: size-t(2px);
+      }
+
+      @include vp-767 {
+        top: size-m(12px);
+        left: size-m(16px);
+
+        width: size-m(20px);
+        height: size-m(20px);
+
+        border-radius: 2px;
+      }
 
       transition: border 0.3s ease;
 
@@ -63,14 +113,24 @@
         top: 50%;
         left: 50%;
 
-        width: 20px;
-        height: 20px;
+        width: size(12px);
+        height: size(12px);
 
-        background-color: rgba(#2c39f2, 0);
+        background-color: $color-transparent;
 
         transform: translate(-50%, -50%);
 
         transition: background-color 0.3s ease;
+
+        @include vp-1023 {
+          width: size-t(12px);
+          height: size-t(12px);
+        }
+
+        @include vp-767 {
+          width: size-m(12px);
+          height: size-m(12px);
+        }
       }
     }
   }
@@ -78,16 +138,32 @@
   &--radio {
     .custom-toggle__icon {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: size(12px);
+      left: size(16px);
 
-      width: 28px;
-      height: 28px;
+      width: size(20px);
+      height: size(20px);
 
-      border: 1px solid #2c39f2;
+      border: 1px solid $color-main-black;
       border-radius: 50%;
 
       transition: border 0.3s ease;
+
+      @include vp-1023 {
+        top: size-t(12px);
+        left: size-t(16px);
+
+        width: size-t(20px);
+        height: size-t(20px);
+      }
+
+      @include vp-767 {
+        top: size-m(12px);
+        left: size-m(16px);
+
+        width: size-m(20px);
+        height: size-m(20px);
+      }
 
       &::before {
         content: "";
@@ -95,8 +171,8 @@
         top: 50%;
         left: 50%;
 
-        width: 20px;
-        height: 20px;
+        width: size(12px);
+        height: size(12px);
 
         color: rgba(255, 255, 255, 0);
 
@@ -104,15 +180,25 @@
         transform: translate(-50%, -50%);
 
         transition: color 0.3s ease;
+
+        @include vp-1023 {
+          width: size-t(12px);
+          height: size-t(12px);
+        }
+
+        @include vp-767 {
+          width: size-m(12px);
+          height: size-m(12px);
+        }
       }
     }
   }
 
   input:checked + .custom-toggle__icon {
-    border: 1.5px solid #2c39f2;
+    border: 1.5px solid $color-vermilion;
 
     &::before {
-      background-color: #2c39f2;
+      background-color: $color-vermilion;
     }
   }
 

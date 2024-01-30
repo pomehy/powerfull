@@ -1,0 +1,9 @@
+mixin page-404()
+  .page-404
+    .page-404__logo
+      +icon("logo", 200, 57).logo
+    .page-404__image-wrapper
+      +picture('content', '404', 'jpg', 1440, 768, 'Page not found')
+    .page-404__content
+      h1.page-404__title.title-h1.text-uppercase Page not found!
+      a(href="index.html").button.button--outline.text-large Go&nbsp;to&nbsp;Homepage

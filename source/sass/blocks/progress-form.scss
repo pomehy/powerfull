@@ -1,0 +1,42 @@
+.progress-form {
+  position: sticky;
+  top: 0;
+  margin-top: size(20px);
+
+  padding: size(20px) 0;
+
+  @include vp-1023 {
+    margin-top: size-t(20px);
+    padding: size-t(20px) 0;
+  }
+
+  @include vp-767 {
+    margin-top: size-m(12px);
+    padding: size-m(20px) 0;
+  }
+
+  &__bg {
+    width: 100%;
+    height: size(4px);
+    background-color: $color-default-black-10;
+
+    @include vp-1023 {
+      height: size-t(4px);
+    }
+
+    @include vp-767 {
+      height: size-m(4px);
+    }
+  }
+
+  &__indicator {
+    width: 100%;
+    height: 100%;
+    background-image: $vermilion-to-scarlet;
+
+    transform: scaleX(0.01);
+    transform-origin: bottom left;
+
+    transition: transform $trans-default;
+  }
+}

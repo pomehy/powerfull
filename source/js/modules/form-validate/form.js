@@ -67,8 +67,10 @@ export class Form {
   }
 
   _onFormSubmit(event, callback = null) {
+
     this._validState = this.validateForm(event);
     if (this._validState && callback) {
+
       this._callbacks[callback].successCallback(event);
       if (this._callbacks[callback].reset) {
         setTimeout(() => {

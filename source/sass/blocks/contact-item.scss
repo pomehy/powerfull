@@ -1,0 +1,89 @@
+.contact-item {
+  &__link {
+    display: flex;
+    align-items: center;
+    color: $color-default-white;
+
+    transition: opacity $trans-default;
+
+    @include hover-focus {
+      .contact-item__icon-wrapper {
+        background-color: $color-default-white;
+      }
+
+      .contact-item__icon {
+        color: $color-vermilion;
+      }
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: size(20px);
+
+    flex-shrink: 0;
+
+    width: size(64px);
+    height: size(64px);
+
+    background-color: $color-default-white-10;
+    border-radius: 50%;
+
+    transition: background $trans-default;
+
+    @include vp-1023 {
+      margin-right: size-t(20px);
+      width: size-t(64px);
+      height: size-t(64px);
+    }
+
+    @include vp-767 {
+      margin-right: size-m(20px);
+      width: size-m(64px);
+      height: size-m(64px);
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+
+    width: size(32px);
+    height: size(32px);
+
+    color: $color-default-white;
+    transition: color $trans-default;
+
+    @include vp-1023 {
+      width: size-t(32px);
+      height: size-t(32px);
+    }
+
+    @include vp-767 {
+      width: size-m(32px);
+      height: size-m(32px);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: size(6px);
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  &__value {
+    font-weight: 700;
+    line-height: 120%;
+  }
+}

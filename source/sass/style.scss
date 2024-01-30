@@ -11,6 +11,7 @@
 @import "variables";
 @import "mixins";
 @import "functions";
+@import "keyframes";
 @import "global/fonts";
 @import "global/reboot";
 @import "global/utils";
@@ -27,8 +28,19 @@
 @import "blocks/intro";
 @import "blocks/about";
 @import "blocks/expertise";
+@import "blocks/services";
 @import "blocks/card";
+@import "blocks/tooltip";
+@import "blocks/content-item";
+@import "blocks/how-it-works";
+@import "blocks/phone-message";
+@import "blocks/pricing";
+@import "blocks/price";
+@import "blocks/reviews";
+@import "blocks/review-card";
 @import "blocks/gallery-slider";
+@import "blocks/reviews-slider";
+@import "blocks/slider-controls";
 @import "blocks/page-footer";
 @import "blocks/modal";
 @import "blocks/button";
@@ -36,6 +48,24 @@
 @import "blocks/custom-toggle";
 @import "blocks/custom-select";
 @import "blocks/input-upload";
+@import "blocks/contact-item";
+@import "blocks/contacts";
+@import "blocks/socials";
+@import "blocks/social-item";
+@import "blocks/footer-nav";
+@import "blocks/main-form";
+@import "blocks/main-form-step";
+@import "blocks/progress-form";
+@import "blocks/modal-success";
+@import "blocks/decor";
+@import "blocks/scroll-translator";
+@import "blocks/button-to-top";
+@import "blocks/expertise-footer-text";
+@import "blocks/preloader";
+@import "blocks/slider-pagination";
+@import "blocks/page-404";
+@import "blocks/sal";
+@import "blocks/sitemap";
 
 // ---------------------------------
 

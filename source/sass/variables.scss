@@ -4,8 +4,17 @@
 // Default
 
 $color-default-black:               #000000;
+$color-default-black-3:            rgba(0, 0, 0, 0.03);
+$color-default-black-5:            rgba(0, 0, 0, 0.05);
+$color-default-black-10:            rgba(0, 0, 0, 0.1);
+$color-default-black-30:            rgba(0, 0, 0, 0.3);
+$color-default-black-50:            rgba(0, 0, 0, 0.5);
+$color-default-black-90:            rgba(0, 0, 0, 0.9);
 $color-main-black:                  #090707;
 $color-default-white:               #ffffff;
+$color-default-white-10:            rgba(255, 255, 255, 0.1);
+$color-default-white-35:            rgba(255, 255, 255, 0.35);
+$color-default-white-70:            rgba(255, 255, 255, 0.7);
 $color-vermilion:                   #FA4B12;
 $color-scarlet:                     #FF1B1B;
 $color-transparent:                 rgba(255, 255, 255, 0);
@@ -23,12 +32,17 @@ $color-torch-red:                   #ff1553;
 $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
 $black-to-top:                      linear-gradient(0deg, $color-main-black 20%, transparent 75%);
 $vermilion-to-scarlet:              linear-gradient(90deg, $color-vermilion 40%, $color-scarlet 100%);
+$scarlet-to-vermilion:              linear-gradient(90deg, $color-scarlet 40%, $color-vermilion 100%);
 
 // Typography
 // ---------------------------------
 
 // переменная используемая в html для подключения скейлинга
 $fz-default:                        14.4px;
+$fz-default-t:                      7.68px;
+$fz-default-m:                      3.75px;
+
+
 
 // у некоторых шрифтов в ios возникают проблемы с символом рубля
 // https://www.artlebedev.ru/kovodstvo/sections/159/#13

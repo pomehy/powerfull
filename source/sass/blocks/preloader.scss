@@ -1,0 +1,138 @@
+.preloader {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100vh;
+
+  background-color: $color-main-black;
+
+  opacity: 1;
+
+  transition: all 0.8s ease;
+
+  &__logo {
+    position: relative;
+
+    img {
+      width: size(490px);
+      height: size(139px);
+    }
+
+
+    @include vp-1023 {
+      img {
+        width: size-t(408px);
+        height: size-t(118px);
+      }
+    }
+
+    @include vp-767 {
+      img {
+        width: size-m(272px);
+        height: size-m(84px);
+      }
+    }
+  }
+
+  &__flash {
+    position: absolute;
+
+    background-color: $color-scarlet;
+    width: size(300px);
+    height: size(300px);
+    border-radius: 50%;
+
+    opacity: 0.4;
+
+    filter: blur(size(200px));
+
+    animation: pulse 1s infinite ease-in-out alternate;
+
+    transition: all $trans-default;
+
+    @include vp-1023 {
+      opacity: 0.25;
+      width: size-t(300px);
+      height: size-t(300px);
+    }
+
+    @include vp-767 {
+      opacity: 0.1;
+      width: size-m(240px);
+      height: size-m(240px);
+    }
+  }
+
+  &.is-hidden {
+    opacity: 0;
+
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  &__loader {
+    position: absolute;
+    bottom: size(100px);
+    width: size(50px);
+    height: size(50px);
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+
+    @include vp-1023 {
+      bottom: size-t(100px);
+      width: size-t(50px);
+      height: size-t(50px);
+    }
+
+    @include vp-767 {
+      bottom: size-m(120px);
+      width: size-m(50px);
+      height: size-m(50px);
+    }
+
+
+  }
+
+  &__loader::before , &__loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: size(5px) solid #FFF;
+    animation: prixClipFix 2s linear infinite ;
+
+    @include vp-1023 {
+      border: size-t(5px) solid #FFF;
+    }
+
+    @include vp-767 {
+      border: size-m(5px) solid #FFF;
+    }
+  }
+  &__loader::after{
+    transform: rotate3d(90, 90, 0, 180deg );
+    border-color: $color-vermilion;
+  }
+
+  @keyframes rotate {
+    0%   {transform: rotate(0deg)}
+    100%   {transform: rotate(360deg)}
+  }
+
+  @keyframes prixClipFix {
+      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+      75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+  }
+}

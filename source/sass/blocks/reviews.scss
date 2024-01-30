@@ -1,0 +1,22 @@
+.reviews {
+  padding-bottom: size(160px);
+  overflow: hidden;
+
+  @include vp-1023 {
+    padding-bottom: size-t(160px);
+  }
+
+  @include vp-767 {
+    padding-bottom: size-m(140px);
+  }
+
+  .slider-controls {
+    position: absolute;
+    right: 0;
+    top: size(-112px);
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+}

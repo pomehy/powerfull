@@ -1,0 +1,60 @@
+.modal-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: size(40px);
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: size(40px);
+    text-transform: uppercase;
+
+    @include vp-1023 {
+      margin-bottom: size-t(40px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(32px);
+    }
+  }
+
+  &__image-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    picture {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    position: relative;
+    color: $color-default-white;
+
+    text-align: center;
+  }
+
+  &__link {
+    color: $color-default-white;
+
+    transition: color $trans-default;
+
+    @include hover-focus {
+      color: $color-vermilion;
+    }
+  }
+}
