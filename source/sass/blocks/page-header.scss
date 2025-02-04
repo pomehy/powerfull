@@ -9,6 +9,27 @@
   background-color: $color-transparent;
   transition: transform 0.6s ease, background-color 0.3s ease;
 
+  &__description {
+    display: inline-flex;
+    flex-grow: 1;
+    margin-left: size(24px);
+
+    font-size: size(16px);
+
+    @include vp-1023 {
+      margin-left: size-t(24px);
+
+      font-size: size-t(16px);
+    }
+
+    @include vp-767 {
+      display: none;
+      margin-left: size-m(10px);
+
+      font-size: size-m(10px);
+    }
+  }
+
   @include vp-1023 {
     padding: size-t(16px) 0;
 

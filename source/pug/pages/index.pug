@@ -14,17 +14,20 @@ block main
   main
     //- на странице запрещен "голый" код
     //- все блоки вставляются из папки pug/components/blocks
-    +preloader()
-    +scroll-translator()
+    //- +preloader()
+    //- +scroll-translator()
     +intro()
-    +about()
+    +before-after()
     +expertise()
     +expertise-footer-text()
-    +services()
+    +gallery()
     +how-it-works()
-    +pricing()
+    //- +services()
     +reviews()
+    +about()
+    +pricing()
     +button-to-top()
+    +timer()
 
 block modals
   +modal("modal--main-form")(data-modal="main-form")

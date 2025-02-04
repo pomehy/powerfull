@@ -1,0 +1,117 @@
+.timer {
+  position: fixed;
+  z-index: 20;
+  top: size(140px);
+  right: size(100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center ;
+  padding: size(8px) size(12px) size(10px) size(12px);
+  border-radius: size(8px);
+  color: $color-main-black;
+  background-color: $color-default-white;
+  opacity: 1;
+  transform: translateY(0%);
+
+  transition: all 0.2s ease;
+
+  &__close {
+    position: absolute;
+    right: size(6px);
+    top: size(6px);
+
+    @include vp-1023 {
+      right: size-t(8px);
+      top: size-t(8px);
+    }
+
+    @include vp-767 {
+      top: size-m(8px);
+      right: auto;
+      width: size-m(100px);
+      height: size-m(8px);
+      border-radius: size-m(6px);
+      background-color: $color-default-black;
+      opacity: 0.6;
+
+      svg {
+        display: none;
+      }
+    }
+  }
+
+  @include vp-1023 {
+    top: size-t(100px);
+    padding: size-t(8px) size-t(12px) size-t(10px) size-t(12px);
+  }
+
+  @include vp-767 {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: size-m(40px) size-m(12px) size-m(16px) size-m(12px);
+    border-top-right-radius: size-m(20px);
+    border-top-left-radius: size-m(20px);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &.is-hide {
+    opacity: 0;
+    transform: translateY(-40%);
+    pointer-events: none;
+
+    @include vp-767 {
+      transition: all 0.7s ease;
+      transform: translateY(100%);
+    }
+  }
+
+  &__title {
+    margin-bottom: size(4px);
+
+    @include vp-1023 {
+      margin-bottom: size-t(4px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(4px);
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+
+  &__time {
+    width: size(87px);
+    margin-left: 0.3em;
+    text-align: center ;
+
+    @include vp-1023 {
+      width: size-t(87px)
+    }
+
+    @include vp-767 {
+      width: size-m(87px)
+    }
+  }
+
+
+
+  // right: size(-10px);
+  // top: size(-10px);
+
+  // @include vp-1023 {
+  //   right: size-t(-10px);
+  //   top: size-t(-10px);
+  // }
+
+  // @include vp-767 {
+  //   right: size-m(-10px);
+  //   top: size-m(-10px);
+  // }
+}

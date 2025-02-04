@@ -38,6 +38,63 @@
     }
   }
 
+  &__accent-text-wrapper {
+    display: flex;
+    align-items: start;
+    max-width: size(300px);
+    margin-top: size(22px);
+    margin-bottom: 0;
+    color: $color-vermilion;
+    padding: size(4px) size(8px);
+    border-radius: size(6px);
+    border: 1px solid $color-vermilion;
+
+    @include vp-1023 {
+      margin-top: size-t(24px);
+      max-width: none;
+      padding: size-t(4px) size-t(8px);
+      border-radius: size-t(6px);
+    }
+
+    @include vp-767 {
+      margin-top: size-m(30px);
+      padding: size-m(4px) size-m(8px);
+      border-radius: size-m(6px);
+    }
+  }
+
+  &__accent-text {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 130%;
+
+    @include vp-1023 {
+      letter-spacing: -0.01em;
+    }
+  }
+
+
+
+  &__note {
+    // margin-top: size(8px);
+    color: $color-default-white-70;
+  }
+
+  &__price-card-value {
+    margin-top: size(20px);
+    margin-bottom: size(-20px);
+
+    @include vp-1023 {
+      margin-top: size-t(24px);
+      margin-bottom: size-t(-24px);
+    }
+
+    @include vp-767 {
+      margin-top: size-m(24px);
+      margin-bottom: size-m(-24px);
+    }
+  }
+
   &__number {
     position: absolute;
     top: size(-80px);
@@ -47,6 +104,8 @@
     line-height: 1;
 
     color: $color-default-white-35;
+
+    pointer-events: none;
 
     @include vp-1023 {
       top: size-t(-80px);
@@ -117,6 +176,18 @@
     }
   }
 
+  &__list--mini {
+    gap: size(12px);
+
+    @include vp-1023 {
+      gap: size-t(12px);
+    }
+
+    @include vp-767 {
+      gap: size-m(12px);
+    }
+  }
+
   &__features {
     display: flex;
 
@@ -158,6 +229,7 @@
 
   &__footer {
     display: flex;
+    align-items: center;
     gap: size(16px);
     margin-top: size(40px);
 
@@ -167,7 +239,8 @@
     }
 
     @include vp-767 {
-      gap: size-m(16px);
+      flex-direction: column;
+      gap: size-m(8px);
       margin-top: size-m(40px);
 
       .button {

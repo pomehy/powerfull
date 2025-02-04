@@ -78,7 +78,7 @@
 
   &__list {
     padding-top: size(100px);
-    max-width: size(500px);
+    max-width: size(560px);
 
     @include vp-1023 {
       padding-top: size-t(80px);

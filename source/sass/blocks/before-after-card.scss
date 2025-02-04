@@ -1,0 +1,76 @@
+.before-after-card {
+  width: auto;
+
+  &__dragger {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: size(10px);
+    height: 100%;
+    background-color: $color-vermilion;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: size(32px);
+      height: size(32px);
+      border-radius: 50%;
+      background-color: $color-vermilion;
+
+      @include vp-767 {
+        width: size-m(20px);
+        height: size-m(20px);
+      }
+    }
+
+    @include vp-767 {
+      width: size-m(10px);
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: size(500px);
+    height: size(340px);
+    background-color: $color-default-white-15;
+
+    border-radius: size(8px);
+
+    overflow: hidden;
+
+    picture {
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    @include vp-767 {
+      width: size-m(300px);
+      height: size-m(320px);
+      border-radius: size-m(8px);
+
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+
+    height: size(340px);
+    width: 100%;
+    object-fit: contain;
+
+    @include vp-767 {
+      height: size-m(320px);
+    }
+  }
+
+  &__image--after {
+    z-index: 1;
+    clip-path: inset(0px 50% 0px 0px);
+  }
+}

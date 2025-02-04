@@ -89,36 +89,3 @@ export class Burger {
     }
   }
 }
-
-const othersArticlesBlock = document.querySelector('[data-others-articles="parent"]');
-
-const handlerVisibleOthersArticles = () => {
-  if (!othersArticlesBlock) {
-    return;
-  }
-
-  const articlesList = othersArticlesBlock.querySelector('[data-others-articles="list"]');
-
-  const hideOthersArticles = () => {
-    if (articlesList.children.length === 0) {
-      othersArticlesBlock.classList.add('is-hidden');
-    }
-  };
-
-  let observerOthersArticles = new MutationObserver(hideOthersArticles);
-
-  observerOthersArticles.observe(articlesList, {
-    childList: true,
-  });
-
-
-  const articleItems = document.querySelectorAll('[data-others-articles="item"]');
-
-  if (articleItems.length > 4) {
-    for (let i = 4; i < articleItems.length; i++) {
-      articleItems[i].classList.add('is-hidden');
-    }
-  }
-};
-
-handlerVisibleOthersArticles();

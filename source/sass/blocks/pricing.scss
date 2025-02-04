@@ -1,9 +1,9 @@
 .pricing {
   position: relative;
-  padding-bottom: size(120px);
+  padding-bottom: size(160px);
 
   @include vp-1023 {
-    padding-bottom: size-t(120px);
+    padding-bottom: size-t(160px);
   }
 
   .page-section__header {
@@ -99,7 +99,7 @@
     display: flex;
 
     .price {
-      margin-right: size(200px);
+      margin-right: size(160px);
 
       @include vp-1023 {
         margin-right: size-t(85px);
@@ -107,7 +107,7 @@
 
       @include vp-767 {
         margin-right: 0;
-        margin-bottom: size-m(32px);
+        margin-bottom: size-m(48px);
       }
     }
 

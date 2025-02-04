@@ -1,85 +1,9 @@
--
-  const experiseItems = [
-    {
-      title: "Strength&nbsp;training",
-      text: "We craft personalized programs to help you sculpt lean muscle while incinerating fat",
-      img: {
-        path: 'content/expertise',
-        image: 'expert-str',
-        format: 'jpg',
-        width: 400,
-        height: 370,
-        altText: 'Strength',
-      },
-    },
-    {
-      title: "Bodybuilding",
-      text: "Together, we will chase your body’s dream shape and strength",
-      img: {
-        path: 'content/expertise',
-        image: 'expert-bb',
-        format: 'jpg',
-        width: 400,
-        height: 370,
-        altText: 'Bodybuilding',
-      },
-    },
-    {
-      title: "POWERLIFTING",
-      text: "Whether for personal strength or competition. We will guide you toward your strongest self",
-      img: {
-        path: 'content/expertise',
-        image: 'expert-pl',
-        format: 'jpg',
-        width: 400,
-        height: 370,
-        altText: 'POWERLIFTING',
-      },
-    },
-    {
-      title: "Physiotherapy",
-      text: "We specialize in correcting poor posture, enhancing hip mobility, and aiding in post-accident rehabilitation.",
-      img: {
-        path: 'content/expertise',
-        image: 'expert-phys',
-        format: 'jpg',
-        width: 400,
-        height: 370,
-        altText: 'Physiotherapy',
-      },
-    },
-    {
-      title: "Endurance",
-      text: "Our custom cardio programs ensure efficient fat burn in less time",
-      img: {
-        path: 'content/expertise',
-        image: 'expert-end',
-        format: 'jpg',
-        width: 400,
-        height: 370,
-        altText: 'Endurance',
-      },
-    },
-    {
-      title: "Nutrition",
-      text: "Bid farewell to diets; we will educate you on nourishing your unique needs",
-      img: {
-        path: 'content/expertise',
-        image: 'expert-nut',
-        format: 'jpg',
-        width: 400,
-        height: 370,
-        altText: 'Nutrition',
-      },
-    },
-  ]
-
 mixin expertise()
-  section.expertise.page-section.page-section--decor
+  section.expertise.page-section.page-section--decor(id="services", data-section)
     .container
       .page-section__header.page-section__header--center
-        h2.page-section__title.title-h2(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") Our Areas Of&nbsp;Expertise
-        p.page-section__description.text-md(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") At the core of our online coaching, we specialize in six key areas designed to elevate your fitness journey
+        h2.page-section__title.title-h2(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") Revolutionize Your Fitness: 30 Days to a Transformative Lifestyle Change
+        p.page-section__description.text-md(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") Realizing Your Fitness Goals with a Proven, Decade&#8209;Strong Methodology
       .page-section__body
         .page-section__grid.page-section__grid--col-3
           each card, index in experiseItems
@@ -89,5 +13,6 @@ mixin expertise()
               .card__content.text-center
                 h3.card__title.title-h3.text-uppercase !{card.title}
                 p.card__description.text !{card.text}
-                +button({text: "Start 14-days free trial"}).button.card__button(data-open-modal="main-form")
+                //- +button({text: "FREE Assesment-session"}).button.card__button(data-open-modal="main-form")
+                +button({text: "FREE Assesment-session", href: '/#pricing'}).button.card__button((data-move-to))
       .decor-flash.decor-flash--expertise

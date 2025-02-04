@@ -1,0 +1,10 @@
+mixin gallery()
+  .about-gallery
+    .container
+      .about-gallery__title.title-h2(data-sal="slide-up", data-sal-duration="600", data-sal-delay="100") Welcome&nbsp;to #[span.text-accent Powerful&nbsp;Team.] #[br] Welcome&nbsp;to stronger,&nbsp;together.
+    .gallery-slider.swiper(data-slider="gallery", data-sal="slide-up", data-sal-duration="600", data-sal-delay="100")
+      .gallery-slider.swiper-wrapper
+        each slide in aboutGallery
+          .gallery-slider__item.swiper-slide(data-image-lazy)
+            +picture-lazy('content/about', slide.name, slide.format, slide.width, slide.height, slide.altText).gallery-slider__img
+  .decor-flash.decor-flash--about

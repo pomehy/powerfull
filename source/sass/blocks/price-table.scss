@@ -1,0 +1,43 @@
+.price-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: size(900px);
+  gap: size(20px);
+
+  &__card {
+    padding: size(30px);
+    border: size(2px) solid $color-default-white-70;
+    border-radius: size(20px);
+
+    .content-item__note {
+      display: flex;
+      flex-direction: column;
+
+      @include vp-767 {
+        display: block;
+      }
+    }
+
+    @include vp-1023 {
+      padding: size-t(24px);
+      border-radius: size-t(20px);
+      border: size-t(2px) solid $color-default-white-70;
+    }
+
+    @include vp-767 {
+      padding: size-m(20px);
+      border-radius: size-m(20px);
+      border: size-m(2px) solid $color-default-white-70;
+    }
+  }
+
+  @include vp-1023 {
+    max-width: none;
+    gap: size-t(20px);
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    gap: size-m(16px);
+  }
+}

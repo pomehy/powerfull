@@ -17,8 +17,8 @@ const dataPostMainForm = (evt) => {
   let userGender = form.querySelector('input[name="gender"]:checked').value;
   let fitnessChalenge = form.querySelector('input[name="fitness-challenge"]:checked').value;
   let sportDays = form.querySelector('input[name="sport-day-value"]:checked').value;
-  let coachGender = form.querySelector('input[name="gender-coach"]:checked').value;
-  let coachStyle = form.querySelector('input[name="style-coach"]:checked').value;
+  // let coachGender = form.querySelector('input[name="gender-coach"]:checked').value;
+  // let coachStyle = form.querySelector('input[name="style-coach"]:checked').value;
   let nutrition = form.querySelector('input[name="nutrition"]:checked').value;
 
   const dataForm = new FormData(form);
@@ -74,12 +74,12 @@ const dataPostMainForm = (evt) => {
   if (sportDays) {
     dataForm.append('sport-day-value', sportDays);
   }
-  if (coachGender) {
-    dataForm.append('gender-coach', coachGender);
-  }
-  if (coachStyle) {
-    dataForm.append('style-coach', coachStyle);
-  }
+  // if (coachGender) {
+  //   dataForm.append('gender-coach', coachGender);
+  // }
+  // if (coachStyle) {
+  //   dataForm.append('style-coach', coachStyle);
+  // }
   if (nutrition) {
     dataForm.append('nutrition', nutrition);
   }

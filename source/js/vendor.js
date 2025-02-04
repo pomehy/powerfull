@@ -4,6 +4,7 @@ import './vendor/focus-visible-polyfill';
 import './vendor/gsap.min';
 import './vendor/ScrollTrigger.min';
 import './vendor/ScrollToPlugin';
+import './vendor/Draggable';
 // import './SmoothScroll';
 import sal from './vendor/sal';
 

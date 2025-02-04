@@ -172,3 +172,14 @@
  body.sal-disabled [data-sal|='flip'] {
    transform: none;
  }
+
+ // clip
+ [data-sal|='clip'] {
+  clip-path: polygon(0 0,0 0,0 100%,0 100%);
+  transition-property: all;
+}
+
+[data-sal|='clip'].sal-animate,
+body.sal-disabled [data-sal|='clip'] {
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+}

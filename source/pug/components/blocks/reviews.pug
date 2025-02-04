@@ -1,163 +1,20 @@
--
-  const reviews = [
-    {
-      name: "Laurel Logas",
-      text: "I met Ivan 16 months ago when I responded to a free 30 minute personal training invitation for my 61st. birthday. That was the best birthday present ever! Ivan is a premier personal trainer. He is very knowledgeable about how to properly train the body for the desired results with correct technique. He motivates me to do more than I think that I can do. I like the results and I have fun. I give Ivan 5 stars Plus!",
-      //- href: 'https://maps.app.goo.gl/uWAGC9jDj74y119AA',
-      href: 'https://maps.google.com?q=Powerful-team,%202355%20Midnight%20Pearl%20Dr,%20Sarasota,%20FL%2034240&ftid=0x88c3398aeeb8a78b:0x16b3e8a136ebdce2&hl=en-US&gl=us&entry=gps&lucs=,47071704,47069508,47084304,94206605&g_st=it',
-      img: {
-        path: 'content/reviews',
-        image: 'reviews-temp',
-        format: 'png',
-        width: 48,
-        height: 48,
-        altText: 'author photo',
-      },
-    },
-    {
-      name: "Joe Johns",
-      text: "I have been working with Ivan for over a year now. His electric personality and approach to personal fitness and goals has made my fitness journey become a lifestyle, not just a work out. Highly recommend Ivan to guide you on your journey.",
-      //- href: 'https://maps.app.goo.gl/uWAGC9jDj74y119AA',
-      href: 'https://maps.google.com?q=Powerful-team,%202355%20Midnight%20Pearl%20Dr,%20Sarasota,%20FL%2034240&ftid=0x88c3398aeeb8a78b:0x16b3e8a136ebdce2&hl=en-US&gl=us&entry=gps&lucs=,47071704,47069508,47084304,94206605&g_st=it',
-      img: {
-        path: 'content/reviews',
-        image: 'reviews-temp',
-        format: 'png',
-        width: 48,
-        height: 48,
-        altText: 'author photo',
-      },
-    },
-    {
-      name: "Sasha",
-      text: "Anastasia is not just a trainer; she’s a true motivator and a guiding light on my fitness journey. As someone who’s not your typical gym enthusiast, Anastasia has transformed my perspective on fitness. Her unwavering support gets me through the toughest days, making the gym a haven even after the most stressful times in life.",
-      //- href: 'https://maps.app.goo.gl/uWAGC9jDj74y119AA',
-      href: 'https://maps.google.com?q=Powerful-team,%202355%20Midnight%20Pearl%20Dr,%20Sarasota,%20FL%2034240&ftid=0x88c3398aeeb8a78b:0x16b3e8a136ebdce2&hl=en-US&gl=us&entry=gps&lucs=,47071704,47069508,47084304,94206605&g_st=it',
-      img: {
-        path: 'content/reviews',
-        image: 'reviews-sasha',
-        format: 'png',
-        width: 48,
-        height: 48,
-        altText: 'author photo',
-      },
-    },
-    {
-      name: "Angela Cirruzzo",
-      text: "Relocating is scary and having fitness goals can be frustrating. However, my new trainer & coach Ivan has an unbelievable understanding of how the body & mind works.",
-      //- href: 'https://maps.app.goo.gl/iZrds9fwLmZ3DAx7A',
-      href: 'https://maps.google.com?q=Powerful-team,%202355%20Midnight%20Pearl%20Dr,%20Sarasota,%20FL%2034240&ftid=0x88c3398aeeb8a78b:0x16b3e8a136ebdce2&hl=en-US&gl=us&entry=gps&lucs=,47071704,47069508,47084304,94206605&g_st=it',
-      img: {
-        path: 'content/reviews',
-        image: 'reviews-temp',
-        format: 'png',
-        width: 48,
-        height: 48,
-        altText: 'author photo',
-      },
-    },
-    {
-      name: "Yaroslav Loganov",
-      text: "Ivan is an exceptional trainer who truly embodies the essence of a powerful-team leader. Under his guidance, my bodybuilding journey has reached new heights. His expertise goes beyond the standard;",
-      //- href: 'https://maps.app.goo.gl/y19sNo5fnzJL2Jm1A',
-      href: 'https://maps.google.com?q=Powerful-team,%202355%20Midnight%20Pearl%20Dr,%20Sarasota,%20FL%2034240&ftid=0x88c3398aeeb8a78b:0x16b3e8a136ebdce2&hl=en-US&gl=us&entry=gps&lucs=,47071704,47069508,47084304,94206605&g_st=it',
-      img: {
-        path: 'content/reviews',
-        image: 'reviews-yaroslav',
-        format: 'png',
-        width: 48,
-        height: 48,
-        altText: 'author photo',
-      },
-    },
-    {
-      name: "Dan Jovanovic",
-      text: "I had a chance to work with different trainers in my life but I can say without a doubt that Ivan’s knowledge , guidance , preparations and overall understanding of bodybuilding is head and shoulders above the rest and would highly recommend him to anyone serious about physical development and health improvement.",
-      //- href: 'https://maps.app.goo.gl/Y3BS3tJxVNpDiFRRA',
-      href: 'https://maps.google.com?q=Powerful-team,%202355%20Midnight%20Pearl%20Dr,%20Sarasota,%20FL%2034240&ftid=0x88c3398aeeb8a78b:0x16b3e8a136ebdce2&hl=en-US&gl=us&entry=gps&lucs=,47071704,47069508,47084304,94206605&g_st=it',
-      img: {
-        path: 'content/reviews',
-        image: 'reviews-temp',
-        format: 'png',
-        width: 48,
-        height: 48,
-        altText: 'author photo',
-      },
-    },
-    {
-      name: "Samanta Oliver",
-      text: "Anastasiia is knowledgeable and pays very close attention to form. Like many, my pain points are back and knees which makes some exercises and heavy lifting a challenge.",
-      //- href: 'https://maps.app.goo.gl/2NsNPGavi4GnH42i7',
-      href: 'https://maps.google.com?q=Powerful-team,%202355%20Midnight%20Pearl%20Dr,%20Sarasota,%20FL%2034240&ftid=0x88c3398aeeb8a78b:0x16b3e8a136ebdce2&hl=en-US&gl=us&entry=gps&lucs=,47071704,47069508,47084304,94206605&g_st=it',
-      img: {
-        path: 'content/reviews',
-        image: 'reviews-samanta',
-        format: 'png',
-        width: 48,
-        height: 48,
-        altText: 'author photo',
-      },
-    },
-    {
-      name: "Chris Monroe",
-      text: "You won’t find a better coach who cares more about your wholistic health than Ivan. He is the real deal and I wouldn’t be where I am — the fittest I have been in my life at 53 — without him.",
-      //- href: 'https://maps.app.goo.gl/Ni3e1LrBVDYPojBy6',
-      href: 'https://maps.google.com?q=Powerful-team,%202355%20Midnight%20Pearl%20Dr,%20Sarasota,%20FL%2034240&ftid=0x88c3398aeeb8a78b:0x16b3e8a136ebdce2&hl=en-US&gl=us&entry=gps&lucs=,47071704,47069508,47084304,94206605&g_st=it',
-      img: {
-        path: 'content/reviews',
-        image: 'reviews-chris',
-        format: 'png',
-        width: 48,
-        height: 48,
-        altText: 'author photo',
-      },
-    },
-    {
-      name: "Vasily Belotserkovsky",
-      text: "Ivan is powerful, he is the best coach, I recommend him to everyone",
-      //- href: 'https://maps.app.goo.gl/XM9coSSpcK3TWVqH7',
-      href: 'https://maps.google.com?q=Powerful-team,%202355%20Midnight%20Pearl%20Dr,%20Sarasota,%20FL%2034240&ftid=0x88c3398aeeb8a78b:0x16b3e8a136ebdce2&hl=en-US&gl=us&entry=gps&lucs=,47071704,47069508,47084304,94206605&g_st=it',
-      img: {
-        path: 'content/reviews',
-        image: 'reviews-vasily',
-        format: 'png',
-        width: 48,
-        height: 48,
-        altText: 'author photo',
-      },
-    },
-    {
-      name: "Anna Loganova",
-      text: "I recently started my fitness journey with Ivan as my coach, and it’s been an incredible experience. Ivan isn’t just a trainer; he’s a motivator and a guide. His approach is personalized and he always ensures that I am comfortable yet challenged in our sessions. What stands out the most is the sense of being part of a powerful-team under his guidance.",
-      //- href: 'https://maps.app.goo.gl/wf4QkBYCPmmGbvPe7',
-      href: 'https://maps.google.com?q=Powerful-team,%202355%20Midnight%20Pearl%20Dr,%20Sarasota,%20FL%2034240&ftid=0x88c3398aeeb8a78b:0x16b3e8a136ebdce2&hl=en-US&gl=us&entry=gps&lucs=,47071704,47069508,47084304,94206605&g_st=it',
-      img: {
-        path: 'content/reviews',
-        image: 'reviews-temp',
-        format: 'png',
-        width: 48,
-        height: 48,
-        altText: 'author photo',
-      },
-    },
-  ]
 
 mixin reviews()
-  section.reviews.page-section(id="reviews", data-section)
+  section.reviews.page-section(id="reviews", data-section, data-slider-container)
     .page-section__trigger(data-section-trigger)
-    .page-section__header
+    .page-section__header.page-section__header--slider
       .container
         .page-section__title-wrapper
           .page-section__title-bg.title-h1(data-title-bg) REAL STORIES
           h2.page-section__title.title-h2(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200") Real stories from #[span.text-accent real&nbsp;people]
-    .page-section__body
-      .container
-        .reviews-slider.swiper(data-slider="reviews", data-sal="slide-up", data-sal-duration="600", data-sal-delay="200")
-          .slider-controls
+      .slider-controls
             button.slider-controls__button.slider-controls__button--prev(type="button", data-slider-prev, aria-label="prev-slide")
               +icon('icon-arrow', 32, 32)
             button.slider-controls__button.slider-controls__button--next(type="button", data-slider-next, aria-label="next-slide")
               +icon('icon-arrow-right', 32, 32)
+    .page-section__body
+      .container
+        .reviews-slider.swiper(data-slider="reviews", data-sal="slide-up", data-sal-duration="600", data-sal-delay="200")
           .reviews-slider__wrapper.swiper-wrapper
             each review in reviews
               .reviews-slider__item.swiper-slide

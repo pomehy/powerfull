@@ -3,10 +3,11 @@ const sections = document.querySelectorAll('[data-section]');
 
 const initColoredLinks = () => {
   for (let i = 0; i < mainNavLinks.length; i++) {
+    const hash = mainNavLinks[i].hash;
 
-    let phoneTimeLine = gsap.timeline({
+    let colorLinks = gsap.timeline({
       scrollTrigger: {
-        trigger: sections[i],
+        trigger: document.querySelector(`${hash}`),
         start: '-1%',
         end: '99%',
         scrub: 1,

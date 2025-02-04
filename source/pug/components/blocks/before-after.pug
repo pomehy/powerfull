@@ -1,0 +1,27 @@
+mixin before-after()
+   section.before-after.page-section.page-section--decor.is-after-intro(data-slider-container)
+    .page-section__header.page-section__header--slider
+      .container
+        .page-section__title-wrapper
+          .page-section__title-bg.title-h1(data-title-bg) Transform with Us
+          h2.page-section__title.title-h2 Transform with Us
+        p.page-section__description.text(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200") Join the Fitness Movement! #[br]Be the Next Inspiration in Our Fitness Revolution!
+        .slider-controls
+            button.slider-controls__button.slider-controls__button--prev(type="button", data-slider-prev, aria-label="prev-slide")
+              +icon('icon-arrow', 32, 32)
+            button.slider-controls__button.slider-controls__button--next(type="button", data-slider-next, aria-label="next-slide")
+              +icon('icon-arrow-right', 32, 32)
+    .page-section__body
+      .container
+        .before-after__slider-wrapper.swiper(data-slider="before-after")
+          .before-after__slider.swiper-wrapper
+            each card in draggSliderImages
+              .before-after-card(data-ba-card="parent", data-image-lazy).swiper-slide
+                .before-after-card__image-wrapper(data-ba-card="image-wrapper")
+                  .before-after-card__dragger.swiper-no-swiping(data-ba-card="dragger")
+                  +picture-lazy('content/before-after', card.img.name, 'jpg', 300, 520, 'before powerfulteam').before-after-card__image
+                  +picture-lazy('content/before-after', card.imgAfter.name, 'jpg', 300, 520, 'after powerfulteam').before-after-card__image.before-after-card__image--after(data-ba-card="image-after")
+    .swiper-pagination.slider-pagination(data-slider="pagination")
+
+
+

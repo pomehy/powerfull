@@ -7,7 +7,13 @@ mixin intro()
       video.intro__video-bg(width="1920" height="1080" preload="auto" autoplay muted playsinline loop data-src="video/video-intro.mp4" src="", data-intro-video)
     .container
       .intro__content
-        h1.intro__title.title-h1.text-uppercase Online fitness coaching
-        .intro__description.text-md Whatever your goals are, we&nbsp;accomplish them together
-        +button({text: "Start 14-days free trial"})(data-open-modal="main-form").intro__button
-    .intro__note.text-md We&nbsp;have #[span.text-accent 300+] Satisfied Clients
+        h1.intro__title.title-h2.text-uppercase Lose weight in 30 days while sculpting your dream body!
+        .intro__description.text-md Sign up for a FREE Online assessment to uncover your fitness potential and overcome body blocks.
+        +button({text: "START NOW!", href: "/#pricing"})(data-move-to).intro__button
+    //- .intro__note.text-md We&nbsp;have #[span.text-accent 300+] Satisfied Clients
+    .intro__footer
+      .intro__features-list
+        each features in featuresItems
+          .features-item
+             .features-item__title #[span !{features.title.top}] #[span !{features.title.bottom}]
+

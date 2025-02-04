@@ -208,64 +208,64 @@
     },
   ]
 
--
-  const genderCoach = [
-    {
-      inputLabel: "Female",
-      inputType: 'radio',
-      inputName: "gender-coach",
-      inputValue: "female",
-      inputId: "female-coach",
-      inputChecked: false,
-    },
-    {
-      inputLabel: "Male",
-      inputType: 'radio',
-      inputName: "gender-coach",
-      inputValue: "male",
-      inputId: "male-coach",
-      inputChecked: false,
-    },
-    {
-      inputLabel: "no Preference",
-      inputType: 'radio',
-      inputName: "gender-coach",
-      inputValue: "no Preference",
-      inputId: "no-preference-coach",
-      inputChecked: false,
-    },
-  ]
+//- -
+//-   const genderCoach = [
+//-     {
+//-       inputLabel: "Female",
+//-       inputType: 'radio',
+//-       inputName: "gender-coach",
+//-       inputValue: "female",
+//-       inputId: "female-coach",
+//-       inputChecked: false,
+//-     },
+//-     {
+//-       inputLabel: "Male",
+//-       inputType: 'radio',
+//-       inputName: "gender-coach",
+//-       inputValue: "male",
+//-       inputId: "male-coach",
+//-       inputChecked: false,
+//-     },
+//-     {
+//-       inputLabel: "no Preference",
+//-       inputType: 'radio',
+//-       inputName: "gender-coach",
+//-       inputValue: "no Preference",
+//-       inputId: "no-preference-coach",
+//-       inputChecked: false,
+//-     },
+//-   ]
 
--
-  const styleCoach = [
-    {
-      inputLabel: "The Drill Sergeant",
-      inputLabelNote: "I want someone who will push me and hold me accountable.",
-      inputType: 'radio',
-      inputName: "style-coach",
-      inputValue: "The Drill Sergeant",
-      inputId: "drill-sergeant-coach",
-      inputChecked: false,
-    },
-    {
-      inputLabel: "The Partner",
-      inputLabelNote: "I want someone who will support and motivate me with positive reinforcement.",
-      inputType: 'radio',
-      inputName: "style-coach",
-      inputValue: "The Partner",
-      inputId: "partner-coach",
-      inputChecked: false,
-    },
-    {
-      inputLabel: "Mix of both",
-      inputLabelNote: "I want someone who will push me sometimes and support me others.",
-      inputType: 'radio',
-      inputName: "style-coach",
-      inputValue: "Mix of both",
-      inputId: "mix-style-coach",
-      inputChecked: false,
-    },
-  ]
+//- -
+//-   const styleCoach = [
+//-     {
+//-       inputLabel: "The Drill Sergeant",
+//-       inputLabelNote: "I want someone who will push me and hold me accountable.",
+//-       inputType: 'radio',
+//-       inputName: "style-coach",
+//-       inputValue: "The Drill Sergeant",
+//-       inputId: "drill-sergeant-coach",
+//-       inputChecked: false,
+//-     },
+//-     {
+//-       inputLabel: "The Partner",
+//-       inputLabelNote: "I want someone who will support and motivate me with positive reinforcement.",
+//-       inputType: 'radio',
+//-       inputName: "style-coach",
+//-       inputValue: "The Partner",
+//-       inputId: "partner-coach",
+//-       inputChecked: false,
+//-     },
+//-     {
+//-       inputLabel: "Mix of both",
+//-       inputLabelNote: "I want someone who will push me sometimes and support me others.",
+//-       inputType: 'radio',
+//-       inputName: "style-coach",
+//-       inputValue: "Mix of both",
+//-       inputId: "mix-style-coach",
+//-       inputChecked: false,
+//-     },
+//-   ]
 
 -
   const nutrition = [
@@ -352,14 +352,14 @@ mixin modal-main-form()
                 .main-form-step__checkbox-list
                   each radio in sportDays
                     +custom-toggle(radio).custom-toggle--radio.text
-          .main-form-step(data-main-form-step)
+          //- .main-form-step(data-main-form-step)
               .main-form-step__title.text-big Do you prefer a male or female coach?
               .main-form-step__content
                 .main-form-step__message.text Value must not be empty
                 .main-form-step__checkbox-list
                   each radio in genderCoach
                     +custom-toggle(radio).custom-toggle--radio.text
-          .main-form-step(data-main-form-step)
+          //- .main-form-step(data-main-form-step)
               .main-form-step__title.text-big What style coach do you feel is best for you?
               p.main-form-step__description.text Your coach will text you daily to provide guidance, so it’s important that your coach’s style is a fit for you.
               .main-form-step__content

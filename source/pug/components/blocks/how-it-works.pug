@@ -1,71 +1,3 @@
--
-  const howItWorksItems = [
-    {
-      title: "Get matched with the right coach",
-      subtitle: 'Your perfect coach',
-      text: "What works for everyone is different. You need someone you click with.",
-      list: [
-        'Get paired with a coach with the best style & specialties for you',
-        'Start with a consultation so you know it’s a fit',
-        'Pick a coach: male or female',
-      ],
-      img: {
-        path: 'content/how-it-works',
-        image: 'how-it-works-1',
-        format: 'jpg',
-        width: 247,
-        height: 540,
-        altText: 'Your perfect coach',
-      },
-    },
-    {
-      title: "Do workouts designed just for you",
-      subtitle: 'CUSTOM WORKOUTS',
-      text: "Because the best workouts are the ones you’ll actually do. We build workouts to fit:",
-      list: [
-        'Your goals',
-        'Your body & injuries',
-        'Your schedule & favorite activities',
-      ],
-      img: {
-        path: 'content/how-it-works',
-        image: 'how-it-works-2',
-        format: 'jpg',
-        width: 247,
-        height: 540,
-        altText: 'CUSTOM WORKOUTS',
-      },
-    },
-    {
-      title: "Improve your nutrition with expert guidance",
-      subtitle: 'PERSONALIZED NUTRITION',
-      text: "Sustainable improvements to nutrition drive life-changing benefits, your coach will:",
-      list: [
-        'Start with diagnostics to understand what’s working and what can be improved',
-        'Provide ongoing feedback and resources to get 1% better every day',
-        'Help you adopt easy swaps, recipes, and habits',
-      ],
-      img: {
-        path: 'content/how-it-works',
-        image: 'how-it-works-3',
-        format: 'jpg',
-        width: 247,
-        height: 540,
-        altText: 'PERSONALIZED NUTRITION',
-      },
-    },
-    {
-      title: "Stay motivated with daily support and optional live video sessions",
-      subtitle: 'ACCOUNTABILITY',
-      text: "Because life happens. When it does, your coach has your back.",
-      list: [
-        'Get daily guidance via text message',
-        'Receive feedback about your form with photos and videosy',
-        'Rate your workouts and develop habits that lead to long-term success',
-      ],
-    },
-  ]
-
 mixin how-it-works()
   section.how-it-works.page-section(id="how-it-works", data-section)
     .page-section__trigger(data-section-trigger)
@@ -105,6 +37,7 @@ mixin how-it-works()
                       span !{listItem}
                       +icon('icon-marker', 22, 22).icon-marker
                 .content-item__footer
-                  +button({text: "Get started"})(data-open-modal="main-form")
+                  //- +button({text: "Get started"})(data-open-modal="main-form")
+                  +button({text: "Get started", href: '/#pricing'})(data-move-to)
                   //- +button({text: "Know more"})(data-open-modal="know-more").button--outline
 

@@ -2,32 +2,32 @@ mixin header(headerMods, currentUrl)
   -
     const headerLinks = [
       {
-        href: "index.html#about",
-        text: "About us"
-      },
-      {
-        href: "index.html#services",
+        href: "/#services",
         text: "Services"
       },
       {
-        href: "index.html#how-it-works",
+        href: "/#how-it-works",
         text: "How it Works"
       },
       {
-        href: "index.html#pricing",
-        text: "Pricing"
-      },
-      {
-        href: "index.html#reviews",
+        href: "/#reviews",
         text: "Reviews"
       },
       {
-        href: "index.html#contacts",
+        href: "/#about",
+        text: "About us"
+      },
+      {
+        href: "/#pricing",
+        text: "Pricing"
+      },
+      {
+        href: "/#contacts",
         text: "Contact us"
       },
     ]
 
-  header.page-header(class=headerMods)(data-header, data-fix-block)
+  header.page-header(class=headerMods, data-header, data-fix-block)
     .container
       .page-header__content
         //- if(currentUrl === "index.html")
@@ -37,6 +37,7 @@ mixin header(headerMods, currentUrl)
         //- else
         a.page-header__logo(href="#top", aria-label="Go to top page", data-move-to)
           +picture('content', 'logo', 'png', 200, 57, 'Powerful team logo').logo
+        span.page-header__description Online fitness coaching
         .page-header__nav
           nav.main-nav
             .main-nav__wrapper
@@ -53,11 +54,11 @@ mixin header(headerMods, currentUrl)
               a(href="tel:+19419325598",  target="_blank", rel="nofollow noopener noreferrer").page-header__contact-link +1 (941) 932-5598
               a(href="mailto:info@powerful-team.com",  target="_blank", rel="nofollow noopener noreferrer").page-header__contact-link info@powerful-team.com
           .page-header__buttons
-            +button({text: "Get started"})(data-open-modal="main-form")
+            +button({text: "Get started",href: "/#pricing"})(data-move-to)
             //- .toggle-theme
             //-   input(type="checkbox").toggle-theme__input.visually-hidden
             //-   .toggle-theme__
-        button.page-header__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-burger)
+        button.page-header__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-header-toggle, data-burger)
               span
               span
               span

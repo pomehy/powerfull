@@ -3,6 +3,7 @@
   overflow: hidden;
 
   display: inline-flex;
+  align-items: center;
   padding: size(12px) size(20px);
 
   color: $color-default-white;
@@ -13,6 +14,14 @@
 
   transition: all $trans-default;
   border-radius: size(8px);
+
+  &--big {
+    padding: size(16px) size(28px);
+
+    @include vp-1023 {
+      padding: size-t(16px) size-t(28px);
+    }
+  }
 
   @include vp-1023 {
     padding: size-t(12px) size-t(20px);

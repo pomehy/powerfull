@@ -1,52 +1,26 @@
 const bgTitles = document.querySelectorAll('[data-title-bg]');
-const sectionTriggers = document.querySelectorAll('[data-section-trigger]');
+// const sectionTriggers = document.querySelectorAll('[data-section-trigger]');
 
 const initAnimateTitle = () => {
+  // eslint-disable-next-line no-undef
   gsap.registerPlugin(ScrollTrigger);
 
-  for (let i = 0; i < bgTitles.length; i++) {
-    let botPosition;
-    let topPosition = '-40%';
+  bgTitles.forEach((title, index) => {
+    // eslint-disable-next-line no-undef
+    gsap.set(title, {xPercent: 100});
 
-    if (bgTitles[i].dataset.titleBg === 'pricing') {
-      botPosition = '30%';
-    } else {
-      botPosition = '80%';
-    }
-
-    if (bgTitles[i].dataset.titleBg === 'services') {
-      topPosition = '0%';
-      botPosition = '120%';
-    } else {
-      topPosition = '-40%';
-      botPosition = '80%';
-    }
-
-    let titleLine = gsap.timeline({
+    // eslint-disable-next-line no-undef
+    gsap.to(title, {
       scrollTrigger: {
-        trigger: sectionTriggers[i],
-        start: topPosition,
-        end: botPosition,
+        trigger: title,
+        start: 'bottom bottom',
+        end: 'top+=500% top',
         scrub: 1,
-        fastScrollEnd: true,
       },
-    }, {defaults: {duration: 2, ease: 'none'}});
+      xPercent: -100,
+    });
+  });
 
-
-    const getPosition = () => {
-      let position;
-
-      if (i % 2 === 0) {
-        position = '-100%';
-      } else {
-        position = '100%';
-      }
-
-      return position;
-    };
-
-    titleLine.to(bgTitles[i], {x: `${getPosition()}`});
-  }
 };
 
 export {initAnimateTitle};

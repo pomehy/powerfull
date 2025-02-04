@@ -1,0 +1,13 @@
+.price-card-value {
+  &__info {
+    margin-top: size(6px);
+
+    @include vp-1023 {
+      margin-top: size-t(4px);
+    }
+
+    @include vp-767 {
+      margin-top: size-m(4px);
+    }
+  }
+}

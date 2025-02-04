@@ -2,6 +2,10 @@
   padding-bottom: size(160px);
   overflow: hidden;
 
+  .page-section__trigger {
+    height: 100%;
+  }
+
   @include vp-1023 {
     padding-bottom: size-t(160px);
   }
@@ -10,13 +14,13 @@
     padding-bottom: size-m(140px);
   }
 
-  .slider-controls {
-    position: absolute;
-    right: 0;
-    top: size(-112px);
+  // .slider-controls {
+  //   position: absolute;
+  //   right: 0;
+  //   top: size(-112px);
 
-    @include vp-1023 {
-      display: none;
-    }
-  }
+  //   @include vp-1023 {
+  //     display: none;
+  //   }
+  // }
 }

@@ -8,9 +8,9 @@ let pagination;
 
 const initSwiper = (slider) => {
 // eslint-disable-next-line no-undef
-  prevButton = slider.querySelector('[data-slider-prev]');
-  nextButton = slider.querySelector('[data-slider-next]');
-  pagination = slider.querySelector('[data-slider="pagination"]');
+  prevButton = slider.closest('[data-slider-container]').querySelector('[data-slider-prev]');
+  nextButton = slider.closest('[data-slider-container]').querySelector('[data-slider-next]');
+  pagination = slider.closest('[data-slider-container]').querySelector('[data-slider="pagination"]');
 
   swiper = new Swiper(slider, {
     speed: 600,

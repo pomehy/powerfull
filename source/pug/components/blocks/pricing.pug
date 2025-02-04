@@ -2,35 +2,21 @@
 mixin pricing()
   section.pricing.page-section(id="pricing", data-section)
     .page-section__trigger(data-section-trigger)
-    .pricing__image-wrapper(data-image-lazy)
-      +picture-lazy('content', 'pricing-bg', 'jpg', 1440, 768, 'ivan trainig')
     .page-section__header
       .container
         .page-section__title-wrapper
-          .page-section__title-bg.page-section__title-bg--reverse.title-h1(data-title-bg="pricing") PRICING
-          h2.page-section__title.title-h2(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200") PRICING
-
+          .page-section__title-bg.title-h1(data-title-bg="pricing") Become a member
+          h2.page-section__title.title-h2(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200") Become a member
     .page-section__body
       .container
-        .pricing__header(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200")
-          .pricing__plan-title.title-h3 Plan duration:
-          .pricing__controls
-            button.button.button--outline(data-pricing-button="monthly", data-value="5").is-active
-              span Monthly
-            button.button.button--outline(data-pricing-button="paid in full", data-value="4")
-              span Paid&nbsp;in&nbsp;full
-              span.pricing__sale.text-accent 20% OFF
-              span.tooltip
-                +icon('icon-tooltip', 21, 21).tooltip__icon
-                span.tooltip__content
-                  span 3&nbsp;months
-        .pricing__body
-          .price(data-price="parent", data-sal="slide-up", data-sal-duration="600", data-sal-delay="200")
+        //- .pricing__body
+          .price(data-price="parent")
             .price__value-wrapper
-              .price__value $#[span(data-price="value") 5]
+              +icon('splash-icon', 200, 24).price__splash(data-price="splash")
+              .price__value(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200") $#[span(data-price="value") 50]
               //- span.price__currency $
-              span.price__duration per&nbsp;day
-              span.price__note starting
+              span.price__duration(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200") #[span $0] only until 02.29.24
+              //- span.price__note $50
           .content-item(data-sal="slide-up", data-sal-duration="600", data-sal-delay="200")
             .content-item__features
               .content-item__features-item No cancellation fees
@@ -51,3 +37,86 @@ mixin pricing()
             .content-item__footer
               +button({text: "Get started"})(data-open-modal="main-form")
               //- +button({text: "Know more"})(data-open-modal="know-more").button--outline
+        .price-table
+          .price-table__card
+            .content-item
+                  h3.content-item__title.title-h3.text-uppercase Annual<br>membership
+                  .content-item__subtitle.text-md.text-accent WHAT INCLUDED
+                  ul.content-item__list.content-item__list--mini
+                    li.text
+                      span Personalized Workouts
+                      +icon('icon-marker', 20, 20).icon-marker
+                    li.text
+                      span Video demonstrations
+                      +icon('icon-marker', 20, 20).icon-marker
+                    li.text
+                      span Complete shopping list
+                      +icon('icon-marker', 20, 20).icon-marker
+                    li.text
+                      span Dine In/Out Option
+                      +icon('icon-marker', 20, 20).icon-marker
+                    li.text
+                      span Workout Log
+                      +icon('icon-marker', 20, 20).icon-marker
+                    li.text
+                      span Track your Progress
+                      +icon('icon-marker', 20, 20).icon-marker
+                    li.text
+                      span Ongoing Email support
+                      +icon('icon-marker', 20, 20).icon-marker
+                    li.text
+                      span 14 Day Money Back Guarantee
+                      +icon('icon-marker', 20, 20).icon-marker
+                  .content-item__accent-text-wrapper.text
+                    //- +icon('icon-attention', 24, 24).icon-attention
+                    p.content-item__accent-text Sign up within the next 24 hours to get #[span.text-uppercase.text-light a&nbsp;FREE personalized meal plan]
+                  .content-item__price-card-value.price-card-value
+                      .price-card-value__number.title-h2 $299.99
+                      .price-card-value__info.text.text-uppercase USD / 12mo
+                  .content-item__footer
+                    +button({text: "Join now", href: "https://www.trainerize.me/profile/ivanpozdiaev/?planGUID=370d433235584d4eb8b37004e497f95d", isExternal: true}).text-uppercase.button--big
+                    .content-item__note.text-sm #[span $0.82/day] *Billed Annualy
+          .price-table__card
+            .content-item
+                  //- .content-item__features
+                    .content-item__features-item No cancellation fees
+                    .content-item__features-item No contracts
+                    .content-item__features-item Cancel anytime
+                  h3.content-item__title.title-h3.text-uppercase Monthly<br>membership
+                  .content-item__subtitle.text-md.text-accent WHAT INCLUDED
+                  ul.content-item__list.content-item__list--mini
+                    li.text
+                      span Personalized Workouts
+                      +icon('icon-marker', 20, 20).icon-marker
+                    li.text
+                      span Video demonstrations
+                      +icon('icon-marker', 20, 20).icon-marker
+                    li.text
+                      span Complete shopping list
+                      +icon('icon-marker', 20, 20).icon-marker
+                    li.text
+                      span Dine In/Out Option
+                      +icon('icon-marker', 20, 20).icon-marker
+                    li.text
+                      span Workout Log
+                      +icon('icon-marker', 20, 20).icon-marker
+                    li.text
+                      span Track your Progress
+                      +icon('icon-marker', 20, 20).icon-marker
+                    li.text
+                      span Ongoing Email support
+                      +icon('icon-marker', 20, 20).icon-marker
+                    li.text
+                      span 14 Day Money Back Guarantee
+                      +icon('icon-marker', 20, 20).icon-marker
+                  .content-item__accent-text-wrapper.text
+                    //- +icon('icon-attention', 24, 24).icon-attention
+                    p.content-item__accent-text Sign up within the next 24 hours to get #[span.text-uppercase.text-light a&nbsp;FREE personalized meal plan]
+                  .content-item__price-card-value.price-card-value
+                      .price-card-value__number.title-h2 $29.99
+                      .price-card-value__info.text.text-uppercase USD / MONTHLY
+                  .content-item__footer
+                    +button({text: "Join now", href: "https://www.trainerize.me/profile/ivanpozdiaev/?planGUID=acd86933acff4dabac61202d67941f68", isExternal: true}).text-uppercase.button--big
+                    .content-item__note.text-sm #[span $0.99/day] *Billed Monthly
+
+

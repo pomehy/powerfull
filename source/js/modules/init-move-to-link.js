@@ -1,6 +1,8 @@
 const moveToLinks = document.querySelectorAll('[data-move-to]');
 const breakpointMD = window.matchMedia('(max-width:1023px)');
 
+gsap.registerPlugin(ScrollToPlugin);
+
 const initMoveToLinks = () => {
   if (!moveToLinks.length) {
     return;
@@ -8,20 +10,19 @@ const initMoveToLinks = () => {
 
   let delayTime = breakpointMD.matches ? 0.3 : 0;
 
-  gsap.registerPlugin(ScrollToPlugin);
-
   moveToLinks.forEach((link) => {
-    const hash = link.hash;
 
     link.addEventListener('click', (evt) => {
       evt.preventDefault();
+      const hash = link.hash;
 
       gsap.to(window, {
-        duration: 2,
+        duration: 1,
         ease: 'power3',
-        delay: delayTime,
+        // delay: delayTime,
         scrollTo: {
           y: hash,
+          offsetY: 0,
         },
       });
     });

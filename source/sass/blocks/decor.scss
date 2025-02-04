@@ -13,11 +13,13 @@
   }
 
   &--expertise {
-    top: 30%;
+    width: size(250px);
+    height: size(250px);
+    top: 40%;
     left: 50%;
 
     transform: translateX(-50%);
-    filter: blur(size(250px));
+    filter: blur(size(200px));
   }
 
   &--services {

@@ -1,0 +1,34 @@
+.before-after {
+  position: relative;
+  overflow: hidden;
+
+  padding-bottom: size(120px);
+
+  @include vp-767 {
+    padding-bottom: size-m(120px);
+  }
+
+  &__slider-wrapper {
+    overflow: visible;
+  }
+
+  .page-section__header {
+    margin-bottom: size(40px);
+
+    @include vp-1023 {
+      margin-bottom: size-t(40px);
+    }
+
+    @include vp-767 {
+      margin-bottom: size-m(40px);
+    }
+  }
+
+  .slider-pagination {
+    bottom: size(48px);
+
+    @include vp-767 {
+      bottom: size-m(60px);
+    }
+  }
+}

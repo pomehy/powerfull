@@ -1,0 +1,34 @@
+.features-item {
+  opacity: 0.6;
+  transition: opacity $trans-default;
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: size(10px);
+
+    font-size: size(14px);
+    line-height: 105%;
+
+    span:first-of-type {
+      font-weight: 700;
+      color: $color-vermilion;
+    }
+
+    @include vp-1023 {
+      padding: size-t(6px);
+
+      font-size: size-t(12px);
+    }
+
+    @include vp-767 {
+      font-size: size-m(10px);
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}

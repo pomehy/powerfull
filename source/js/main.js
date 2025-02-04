@@ -1,7 +1,7 @@
 import {mobileVhFix} from './utils/mobile-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
-import {handlerStickyCard} from './modules/sticky-card';
+// import {handlerStickyCard} from './modules/sticky-card';
 import {Burger} from './modules/burger';
 import {handlerHeader} from './modules/handler-header';
 import {handlerPrice} from './modules/handler-price';
@@ -10,7 +10,6 @@ import {initAnimateTitle} from './modules/init-anim-title';
 import {initExeprtiseFooterText} from './modules/init-expertise-text';
 import {initGallerySlider} from './modules/init-gallery-slider';
 import {initAnimatePhone} from './modules/init-phone-animate';
-// import {initSmoothScroll} from './modules/init-smoothscroll';
 import {initMoveToLinks} from './modules/init-move-to-link';
 import {handlerIntroCover} from './modules/init-intro-bg';
 import {handlerStepMainForm} from './modules/init-handler-form-step';
@@ -20,12 +19,28 @@ import {initPreloader} from './modules/init-preloader';
 import {initServicesSlider} from './modules/init-services-slider';
 import {initLazyImage} from './modules/init-lazy-load';
 import {initVideoIntro} from './modules/init-intro-video';
+import {initSplash} from './modules/init-splash-price';
+import {initDraggableCards} from './modules/init-drag-card';
+import {initBeforeAfterSlider} from './modules/init-before-after-slider';
+import {initBurger} from './modules/init-burger';
+import { initTimer } from './modules/timer';
+
 // ---------------------------------
 
 window.sal({
   once: true,
   threshold: 0.5,
 });
+
+
+// const lenis = new Lenis();
+
+// function raf(time) {
+//   lenis.raf(time);
+//   requestAnimationFrame(raf);
+// }
+
+// requestAnimationFrame(raf);
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -40,19 +55,16 @@ window.addEventListener('DOMContentLoaded', () => {
   const form = new Form();
   window.form = form;
   form.init();
-
+  initBurger();
   // Modules
   // ---------------------------------
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
-    const burger = new Burger();
-    burger.init();
     handlerHeader();
-    // initSmoothScroll();
     initMoveToLinks();
-    handlerStickyCard();
+    // handlerStickyCard();
     handlerPrice();
     initReviewsSlider();
     initAnimateTitle();
@@ -63,6 +75,10 @@ window.addEventListener('DOMContentLoaded', () => {
     initColoredLinks();
     handlerButtonToTop();
     initServicesSlider();
+    initSplash();
+    initDraggableCards();
+    initBeforeAfterSlider();
+    initTimer();
   });
 });
 

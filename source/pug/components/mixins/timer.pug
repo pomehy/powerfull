@@ -1,0 +1,7 @@
+mixin timer()
+  .timer(data-timer="parent").is-hide
+    .timer__title.text Time-limited offers
+    a.timer__close(href="#", aria-label="close timer", data-timer="close")
+      +icon("icon-close", 15, 15)
+    a.button.timer__button(href="/#pricing", data-move-to) JOIN NOW
+      .timer__time(data-timer="time")
